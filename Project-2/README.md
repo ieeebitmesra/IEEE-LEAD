@@ -2,7 +2,7 @@
 ### Domain: Web Scraping
 ### Technology: Python
 ### Milestones: (For a given Keyword)
-* Google search results first url  
+* Google search result's first URL  
 * Flipkart’s first item with price and image. 
 * Comparing price across e-commerce websites 
 * Additionals:- Graphical User Interface, more details like the
