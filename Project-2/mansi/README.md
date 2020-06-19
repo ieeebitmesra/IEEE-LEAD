@@ -17,9 +17,9 @@
   * tkinter
 ## Description of each file :
   #### AMAZON.PY  
-   In this file i have scraped the price ,name,discount of the first five products from amazon and defined it in the class.
+    In this file i have scraped the price ,name,discount of the first five products from amazon and defined it in the class.
   #### ECOMMERCE.PY
-   In this file i have scraped the price ,name,discount,ratings of the first five products from flipkart and defined it in the class.
+    In this file i have scraped the price ,name,discount,ratings of the first five products from flipkart and defined it in the class.
   #### PAYTYMMALL.PY
     In this file i have scraped the price ,name,discount,original price,ratings of the first five products from paytym mall and defined it       in the class.
   #### NEWEBAY.PY
@@ -44,8 +44,5 @@
 I will make a website wherin i will directly call the class and show all the data together ,will try working out on the different layouts, add plots using matplotlib ,andd pictures.
 ### What I have learned 
 I have learnt different packages from PYTHON ,i have learnt how to GOOGLE and how to DEBUG them accordingly .
-
-### I  have shown the gui for paytym mall
-Screenshot for the same is:
 
 
