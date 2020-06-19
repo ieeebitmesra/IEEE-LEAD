@@ -1,0 +1,756 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html
+{
+ font-size: 15px;
+ font-family: 'Dancing Script',sans-serif;
+ color:whitesmoke;
+}
+body
+{
+    width: 100%;
+    height:100%;
+    /*background:url(back2.jpg) no-repeat center fixed;*/
+    background-size: cover;
+    background: linear-gradient(to left,rgb(44, 44, 44) 20%, rgb(56, 57, 58) 30%, rgb(41, 44, 48) 45%, rgb(24, 26, 27) 75%);
+    /*background-color: black;*/
+}
+a{
+    text-decoration: none;
+    color:rgb(21, 169, 228);
+    font-size: 1.9rem;
+    font-weight: 200;
+}
+a:hover
+{
+ background: linear-gradient(#e66465, #9198e5);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+}
+p{
+    font-size: 2rem;
+    font-weight: 400;
+}
+img
+{
+ width: 100%;
+}
+header
+{
+ width:100%;
+ height:50vh;
+}
+.container
+{
+    width:100%;
+    height:100%;
+    position:relative;
+    margin:0 auto;
+    max-width:120rem;
+}
+all-heading
+{
+ text-align:center;
+ margin-top:10rem;
+}
+.all-heading h1
+{
+    font-size: 80px;
+    font-weight: 600;
+    position: relative;
+    text-align: center;
+    margin-bottom:1rem;
+    background: linear-gradient(to left,rgb(188, 210, 235), rgb(61, 142, 235) 50%, rgb(188, 210, 235) 85%, rgb(61, 142, 235)75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text 15s 5;
+}
+@keyframes text{
+    0%
+    {
+        color:black;
+        margin-top: 40px;
+    }
+    30%
+    {
+       letter-spacing:30px;
+       margin-top: 40px;
+    }
+    85%
+    {
+        
+       letter-spacing:8px;
+       margin-top: 40px;
+    }
+}
+/*
+.all-heading h1::before,
+.all-heading h1::after{
+    content: ' ';
+    position:absolute;
+    bottom: -5rem;
+    left:-50%;
+    transform: translate(-50%);
+    background-color:white;
+}
+.all-heading h1::before
+{
+    width:30px;
+    height:13px;
+    border-radius:.8rem;
+}
+.all-heading h1::after
+{
+    width:20px;
+    height:3px;
+    border-radius:100%;
+    bottom:-.9rem;
+}
+*/
+.all-heading h6
+{
+    font-size: 30px;
+    font-weight: 400;
+    position: relative;
+    text-align:center;
+    margin-bottom:1rem;
+    background: linear-gradient(to left,rgb(188, 210, 235), rgb(61, 142, 235) 50%, rgb(188, 210, 235) 85%, rgb(61, 142, 235)75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*navigation baar*/
+
+
+.navbar-container
+{
+    width:100%;
+    /*height: 100vh;*/
+    position: relative;
+    background-color:gainsboro;
+    overflow: hidden;
+    transition: 1s ease-in-out;
+    z-index: 1;
+    top:0;
+    text-align:center;
+}
+/*.navbar
+{
+    position: relative;
+    top:25%;
+    width:100%;
+    text-align: center;
+    margin-top: 30px;
+    transition: 0.3s ease-in-out;
+}
+.link
+{
+    margin:2px;
+    
+}*/
+.list
+{
+ list-style: none;
+ margin:2.5rem;
+}
+.navbar a
+{
+    background: linear-gradient(#e66465, #9198e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.navbar a:hover
+{
+    background: linear-gradient(to left,rgb(188, 210, 235), rgb(61, 142, 235) 50%, rgb(188, 210, 235) 85%, rgb(61, 142, 235)75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.navbar a:focus
+{
+    background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.closebtn
+{
+    position: absolute;
+    top:30px;
+    right:42px;
+    font-size: 100px;
+    color:white;
+    z-index:1;
+    cursor:pointer;
+    transition: 1s ease-in-out
+}
+
+.navbar.open
+{
+ top:0;
+ border-radius: intial;
+}
+
+.menubar
+{
+     position: absolute;
+     color:white;
+     font-size:60px;
+     left:42px;
+     top:24px;
+     cursor: pointer;
+     z-index:1;
+     transition: 1s ease-in-out;
+}
+.headtext
+{
+    position:relative;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:100%;
+    text-align:center;
+    z-index: 1;
+    background: linear-gradient(to left,rgb(188, 210, 235), rgb(61, 142, 235) 50%, rgb(188, 210, 235) 85%, rgb(61, 142, 235)75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+.abocon .container
+{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.aboutheading 
+{
+    text-align: center;
+    line-height: 0;
+    margin-bottom: 6rem;
+    font-size: 80px;
+    color:rgb(28, 148, 196);
+    animation: text 8s 4;
+}
+@keyframes text{
+    0%
+    {
+        color:black;
+        margin-top: 40px;
+    }
+    30%
+    {
+       letter-spacing:20px;
+       margin-top: 40px;
+    }
+    85%
+    {
+        
+       letter-spacing:8px;
+       margin-top: 40px;
+    }
+}
+
+.abocon p
+{
+   font-size:30px;
+   flex:1;
+   margin-bottom: 100px;
+}
+.imagem
+{
+    flex:1;
+    margin-right:5rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    border-radius:30px;
+}
+
+.container2
+{   width:100%;
+    height:280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+    grid-gap:10px;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+.container2 .skill{
+    position: relative;
+    background: whitesmoke;
+}
+/*.skillcon all-heading
+{
+ position: relative;
+ text-align: center;
+}/*
+/*.skill
+{
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
+    justify-content: center;
+    grid-gap: 1.5rem;
+    text-align: center;
+    font-family: 'Dancing Script';
+    font-size:25px;
+}*/
+.skill 
+{
+ list-style:none;
+ color:black;
+ margin-bottom:20px;
+ font-size: 30px;
+ text-align: center;
+ overflow: hidden;
+ border-radius:20px;
+ margin:20px;
+}
+.skill h1 
+{
+    font-size: 40px;
+    font-weight: 400;
+    text-decoration-line: underline;
+    color:rgb(13, 165, 224);
+    text-transform:capitalize;
+}
+/*.porcon-item
+{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom:50rem;
+}
+.procon-item :nth-child()
+{
+    margin-bottom: 50px;
+}
+.porcon::after{
+    content:" ";
+    display:table;
+    clear:both;
+}*/
+.procon div h1
+{
+  font-size: 40px;
+  text-decoration-line: underline;
+}
+.blog-imga
+{
+    float:left;
+    margin-left: 20px;
+}
+.blog-text
+{
+    float:left;
+    margin-left: 20px;
+}
+.blog
+{
+    overflow:auto;
+}
+
+.rating-imga
+{
+    float:left;
+    margin-left: 60px;
+}
+.rating-text
+{
+    float:left;
+    margin-left:600px;
+}
+.ratings
+{
+     overflow:auto;
+}
+
+.construct-imga
+{
+    float:left;
+    margin-left: 20px;
+    margin-top: 30px ;
+}
+.construct-text
+{
+    float:left;
+    margin-left: 20px;
+    margin-top:40px;
+}
+.constron
+{
+    overflow:auto;
+}
+/*
+.text{
+    float:left;
+    width:50%;
+}
+*/
+form{
+    width:60%;
+    margin: 0 auto;
+}
+form label{
+    font-size: 30px;
+    color:rgb(29, 175, 233);
+}
+
+input,select,textarea
+{ 
+    width:100%;
+    padding:1rem;
+    margin-bottom: 5px;
+    outline-color: rgb(17, 150, 228);;
+    border-radius: 20px;
+    box-shadow: 2px 2px 12px;
+}
+input[type="submit"]
+{
+    width:intial;
+    cursor:pointer;
+    border-radius:20px;
+    color:rgb(17, 150, 228);
+    background-color:black;
+    font-size: 20px;
+    margin-bottom:20px;
+    box-shadow: 2px 2px 12px;
+    transition: 1.5s ;transform: 0.5s ease-in-out;
+}
+input[type="submit"]:hover
+{
+background-color:white;
+color:black;
+transform: rotate(360deg);
+}
+.social
+{
+ position:relative;
+ text-align: center;
+}
+.btn
+{
+ display: inline-block;
+ width:60px;
+ height:60px;
+ color:rgb(22, 128, 228);
+ margin: 10px;
+ border-radius:30%;
+ box-shadow: 2px 2px 12px;
+ overflow: hidden;
+ position: relative;
+}
+.btn i
+{
+    line-height: 70px;
+    font-size:30px;
+    transition: 1s linear;
+}
+.btn:hover i
+{
+ /*transform: scale(0.5);*/
+ color:black;
+}
+.btn::before
+{
+    content:"";
+    position: absolute;
+    width:120%;
+    height:120%;
+    background:rgb(19, 160, 185);
+    transform:rotate(45deg);
+    left: -110%;
+    top:90%;
+}
+.btn i.fa::after
+{
+    background: linear-gradient(#e66465, #9198e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.btn:hover::before
+{
+    animation: aaa 2s 1;
+    top:-10%;
+    left:-10%;
+}
+@keyframes aaa
+{
+
+    0%
+    {
+        left: -110%;
+        top: 90%;
+    }
+    50%
+    {
+       left:10%;
+       top:-30%;
+    }
+    100%
+    {
+        left:-10%;
+        left:-10%;
+    }
+}
+.foot p
+{
+    color:rgb(7, 163, 253);
+    font-size: 25px;
+    position: absolute;
+    left:40%;
+    font-family: 'Dancing Script';
+}
+@media screen and (min-width:760px)
+{
+    .headtext
+    {
+        font-size: 25px;
+    }
+    .link
+    {
+       font-size: 30px;
+    }
+    .aboutheading 
+    {
+    font-size: 40px;
+    margin-right: 200px;
+    }
+    .all-heading
+    {
+    font-size: 20px;
+    }
+.blog
+{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+/*
+.rating-text
+{
+    float:left;
+    margin-left:12px;
+}
+.rating-igma
+{
+ float:left;
+ margin:0px;
+}
+.ratings
+{
+    display:block;  
+}
+*/
+.rating-igma
+{
+ float:left;
+ margin-left:10px;
+}
+.rating-text
+{
+    float:left;
+    margin-left:10px;
+}
+.ratings
+{
+    display:flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+.constron
+{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.menubar
+{
+    font-size:40px;
+}
+.closebtn
+{
+    font-size: 40px;
+}
+}
+@media screen and (max-device-width:480px)
+{
+ header
+{
+ width:100%;
+ height:55vh;
+}
+.navbar a
+{
+ font-size:25px;
+ margin:20px;
+ padding:10px;
+}
+.menubar
+{
+    position: relative;
+    font-size:20px;
+}
+.closebtn
+{
+    font-size: 40px;
+}
+.navbar-container
+{
+    width:auto;
+    position: relative;
+    overflow: hidden;
+    text-align:center;
+}
+.headtext
+{
+    left:30%;
+    transform: translate(-30%,-30%);
+}
+body
+{
+    width: auto;
+    height:auto;
+}
+.abocon .container
+{
+  display:block;
+  flex:0;
+}
+.aboutheading 
+{
+    font-size: 30px;
+    animation: text 8s 6;
+    margin-bottom: 30px;
+    margin-top:30px
+}
+.abocon p
+{
+   font-size:25px;
+   margin-bottom:20px;
+   width:auto;
+   word-spacing: 10px;
+   flex:0;
+   margin:10px;
+}
+.imagem
+{
+    flex:0;
+    margin-right:8rem;
+    margin-left: 8rem;
+}
+p{
+    font-size: 29px;
+    font-weight: 200;
+}
+.all-heading h1
+{
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom:.8rem;
+}
+.all-heading h6
+{
+    font-size: 25px;
+    font-weight: 200;
+    margin-bottom:.8rem;
+}
+
+.container2
+{   width:auto;
+    height:auto;
+    grid-template-columns:1fr;
+    grid-template-rows: 1.5fr;
+    border-radius: 20px;
+}
+.skill 
+{
+ list-style:none;
+ color:black;
+ margin-bottom:5px;
+ font-size: 25px;
+ margin:1px;
+}
+.skill h1 
+{
+    font-size: 30px;
+    font-weight: 100;
+}
+.blog
+{
+  display:block;
+}
+.rating-text
+{
+    float:left;
+    margin-left:12px;
+}
+.rating-igma
+{
+ float:left;
+ margin:0px;
+}
+.ratings
+{
+    display:block;  
+}
+.constron
+{
+    display:block;
+}
+form{
+    width:90%;
+    margin: 0 auto;
+}
+form label{
+    font-size: 25px;
+    color:rgb(29, 175, 233);
+}
+
+input,select,textarea
+{ 
+    margin-bottom: 3px;
+}
+input[type="submit"]
+{
+    width:100%;
+    border-radius:20px;
+}
+.btn
+{
+ display:inline-block;
+ width:30px;
+ height:30px;
+ color:rgb(22, 128, 228);
+ margin: 12px;
+ border-radius:20%;
+}
+.btn i
+{
+    line-height: 20px;
+    font-size:25px;
+    transition: 1s linear;
+}
+.btn::before
+{
+    content:"";
+    position: absolute;
+    width:120%;
+    height:120%;
+    background:rgb(46, 173, 247);
+    transform:rotate(45deg);
+    left: -110%;
+    top:90%;
+}
+.btn:hover::before
+{
+    animation: aaa 4s 2;
+}
+.foot p
+{
+    left:20%;
+}
+}

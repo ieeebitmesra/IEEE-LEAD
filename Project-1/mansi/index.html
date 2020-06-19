@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Mansi kanoi.</title>
+    </head>
+<body>
+    <header>
+        <span class="menubar" onclick="openMenu()">&#9776</span>
+        <div class="navbar-container" id="navbar-container">
+            <span class="closebtn" onclick="closeMenu()">&times;</span>
+        <nav class="navbar">
+             <ul class="list">
+                <li>
+                    <a href="index.html" class="link" onclick="return theFunction()"><i class="fa fa-home"></i> Home</a>
+                </li>
+                <li>
+                     <a href="#procon" class="link" onclick="return theFunction()"><i class="fa fa-file"></i></i> Projects</a>
+                        
+                </li>
+                 <li>
+                    <a href="#skillcon" class="link" onclick="return theFunction()"><i class="fa fa-briefcase"></i> Skills</a>
+                </li>
+                <li>
+                    <a href="#abocon" class="link"onclick="return theFunction()"><i class=" fa fa-envelope"></i> About Me</a>
+                </li>
+                <li>
+                    <a href="#contcon" class="link" onclick="return theFunction()"><i class="fa fa-pencil"></i> Contacts</a>
+                </li>
+             </ul>
+         </nav>
+        </div>
+        </header>
+         <div class="headtext">
+             <h1>Hi  There </h1>
+             <p>This is Mansi here I was born at age zero <br> since then have been trying to
+                survive as a<br> successful being on this planet until present day</p>
+         </div>
+    <section class="abocon" id="abocon">
+       <div class="container">
+           <div class="imagem" >
+            <img src="mansiieee.jpg" style="width:150px;height:250px;";>
+           </div>
+            <div class="content">
+                <div class="aboutheading">
+                    <h1>About Me</h1>
+                </div>
+                    <p>"I am as comaptilble to stress as shakuni was with kauravas"
+                        <br>"i am shravan kumar to books, not ebook"<br>
+                         I hail from Ranchi  <br> Currently studying in BIT ,mesra 
+                         br>I am second year graduate studying maths and computing 
+                        Baging an intrest in finance,numbers,data anyalysis and hence trying to figure out how to use tech to ease it out</p>
+                        
+            </div>
+       </div> 
+
+    </section>
+    <section class="skillcon" id="skillcon">
+            <div class="all-heading">
+                <h1>Skills:</h1>
+                <h6>What I can do</h6>
+            </div>
+            <div class="container2">
+            <div class="skill">
+                <h1>languages </h1>
+                <p>
+                    <ul>
+                        <li>python</li>
+                        <li>c++</li>
+                    </ul>
+                </p>
+            </div>
+            <div class=" skill">
+                <h1>Tools</h1>
+                <p>    
+                    <ul>
+                        <li>Mysql</li>
+                    </ul>
+                </p>
+            </div>
+            <div class=" skill">
+                <h1>Web Devlopment</h1>
+                <p>    
+                    <ul>
+                        <li>html</li>
+                        <li>css</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="procon" id="procon">
+        <div class="container">
+            <div class="all-heading">
+                <h1>Project:</h1>
+                <h6>See some of my work .</h6>
+            </div>
+            <div class="procon-items">
+                <div class="blog">
+            <div class="blog-imga">
+                <img src="blog.jpg" style="width:250px;height:271px;"; >
+            </div>
+            <div class="blog-text">
+                <h1>Blog:</h1>
+                <p>It is right now in the form of a newsletter <br>which covers entertainment,finance,
+                    space.
+                </p>
+                <a href="#" class="see">click to read!</a>
+            </div>
+            </div>
+            <div class="procon-items">
+                <div class="ratings">
+                <div class="rating-text">
+                    <h1>Ratings:</h1>
+                    <p>
+                        It contains the ratings of the <br>competetive programming site.<br>
+                        how many problems I have solved<br>
+                        The badges i have earned<br>
+                    </p>
+                    <a href="https://www.codechef.com/users/mansi1712">click to see!</a>
+                </div>
+                <div class="rating-imga">
+                    <img src="ratings2.jpg" style="width:250px;height:271px;";>
+                </div>
+                </div>
+                </div>
+                <div class="procon-items">
+                    <div class="constron">
+                    <div class="construct-imga">
+                        <img src="undercons.jpg" style="width:250px;height:271px;";>
+                    </div>
+                    <div class="construct-text">
+                        <h1> My Projects </h1>
+                        <p>wait a little! It is still cementing itself.<br> Beautiful Things take time. </p>
+                        <a href="#">click to see!</a>
+                    </div>
+                    </div>
+                    </div>
+        </div>
+    </section>
+    <section class="contcon" id="contcon">
+        <div class="container">
+            <div class="all-heading">
+                <h1>Contact Me</h1>
+                <h6>Any good idea in mind </h6>
+            </div>
+            <!--<form action ="results.html" method="GET">-->
+                
+                enctype="multipart/form-data" name="emailportfolio">
+                 <label for="email">Enter your email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email..." required><br><br>
+                <label for="what and how">give a brief of what your project is and How I can help!</label>
+                 <textarea name="what and how" id= "what and how" rows="10" cols="30">
+                    </textarea>
+                 <input type="submit" value="Submit">
+            </form>
+        </div>
+    </section>
+    <footer class="foot">
+    <div class="whole" id="whole">
+        <div class="social">
+            <a class="btn" href="#" class="pinterest"><i class="fa fa-pinterest-p"></i></a>
+            <a class="btn" href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
+            <a class="btn" href="#" class="linkedin" ><i class="fa fa-linkedin-square"></i></a>
+            <a class="btn" href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+            <a class="btn" href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a class="btn" href="#" class="google"><i class="fa fa-google"></i></a>
+        </div>
+        <!--copyright-->
+       <p> <i class="fa fa-copyright"></i><b>2020 Mansi Kanoi</b></p>
+        <div>
+    </footer>
+    <script src="script.js"></script>
+</body
+</html>
