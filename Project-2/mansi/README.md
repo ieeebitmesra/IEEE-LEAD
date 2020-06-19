@@ -15,6 +15,25 @@
   * PYTHON 
   * different packages of python
   * tkinter
+## Description of each file 
+  ##### AMAZON.PY  
+  In this file i have scraped the price ,name,discount of the first five products from amazon and defined it in the class.
+  ##### ECOMMERCE.PY
+  In this file i have scraped the price ,name,discount,ratings of the first five products from flipkart and defined it in the class.
+  ##### PAYTYMMALL.PY
+  In this file i have scraped the price ,name,discount,original price,ratings of the first five products from paytym mall and defined it in the class.
+  ##### NEWEBAY.PY
+   In this file i have scraped the price ,nameof the first five products from paytym mall and defined it in the class.
+   ##### NEW.PY
+   In this i have callled all the different sites through class appended the comman results that is the name ,price of the products with the    site and hence the price can be compared.
+   ##### GUIPAYTYM.PY
+    In this i have created the gui for paytymmall and represented its data for the product entered by the user
+   ##### finale.py 
+   prints all my milestone in the console in the form of a dataframe.
+   
+   #### all of this acts for the name of the product enetred by the user
+    
+  
 ### PROBLEMS FACED
 * every site had a different class tags and the image source was difficult to scrape.
 * my sort function is applied to three sites which i scraped while flipkart is not accepting it 
