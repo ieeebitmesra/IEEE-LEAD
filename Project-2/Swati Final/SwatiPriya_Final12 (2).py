@@ -384,7 +384,56 @@ class PageTwo(tk.Frame):
                 ProductImage = Image.open(BytesIO(ProductImage_response.content))
                 ProductImage.save(r"C:\Users\Public\Pictures\img.png")     
 
-                
+        # Price extraction from Amazon India website
+        def Amazon():
+            
+            # a list variable storing ProductName, ModelID, ModelPartNumber, Brand, ISBN, RefrigModelID, WatchModelID
+            Comparison_list = Feature_list
+            if Feature_list[6]:
+                SearchProduct = Feature_list[6]
+            elif Feature_list[5]:
+                SearchProduct = (Feature_list[0])[0:10] + ' ' + Feature_list[5]
+            elif Feature_list[4]:
+                SearchProduct = Feature_list[4]
+#             elif Feature_list[3] and Feature_list[1]:
+#                 SearchProduct = Feature_list[3] + Feature_list[1]
+#             elif Feature_list[2] and Feature_list[1]:
+#                 SearchProduct = Feature_list[2] + Feature_list[1]
+#             elif Feature_list[1]:
+#                 SearchProduct = Feature_list[1]
+            else:
+                SearchProduct = Feature_list[0] + ' ' + Feature_list[1]
+
+            url = re.sub("\s+",'+', ('https://www.amazon.in/s?k=' + SearchProduct))
+            #webbrowser.open(url, new=1, autoraise=True)
+
+            headers_c = {'User-Agent': 'Mozilla/5.0 (Linux; Android 5.1.1; SM-G928X Build/LMY47X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.83 Mobile Safari/537.36', "Accept-Encoding":"gzip, deflate",     "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "DNT":"1","Connection":"close", "Upgrade-Insecure-Requests":"1"}
+
+            source = requests.get(url, headers = headers_c,).content
+            soup = BeautifulSoup(source, 'lxml')
+            prettyHTML = soup.prettify()   #prettify the html
+            ##print(prettyHTML)
+
+            url = 'https://www.amazon.in' + soup.find('div', class_="s-result-item s-asin sg-col sg-col-12-of-12").a['href']
+            print(url)
+#             webbrowser.open(url, new=1, autoraise=False)
+            source = requests.get(url, headers = headers_c).text         
+            soup = BeautifulSoup(source, 'lxml')
+
+            global AmazonProductPrice
+            global AmazonProductUrl
+            
+            try:
+                AmazonProductPrice = str((soup.find('span', id="priceblock_ourprice").text).strip()).replace("\n", " ").split(" ")[0]
+            except:
+                try:
+                    AmazonProductPrice = str((soup.find('td', class_="a-span12").text).strip()).replace("\n", " ").split("  ")[0]
+                except:
+                    AmazonProductPrice =""
+                    
+            AmazonProductUrl = url
+
+            
         # Flipkart Product details page
         def FlipkartProductPage():
             
@@ -464,25 +513,36 @@ class PageTwo(tk.Frame):
                 ProductPrice_Flipkart_label = tk.Label(top2, text = ProductPrice, font=X_Font, bg="white")
 
                 # Amazon Product Price label
-                ProductPrice_Amazon_label = tk.Label(top2, text = 'ProductPrice_Amazon', font=X_Font, bg="white")
-
+                ProductPrice_Amazon_label = tk.Label(top2, text = AmazonProductPrice, font=X_Font, bg="white")
+                
+                 # go to Flipkart product page
+                def GoToFlipkart():
+                    webbrowser.open(ProductUrl, new=1, autoraise=True)
+                # go to Flipkart product page
+                def GoToAmazon():
+                    webbrowser.open(AmazonProductUrl, new=1, autoraise=True)    
+                   
                 # Grid packing of widgets
                 ProductName_label.grid(row=1, column=1, columnspan = 3, sticky= "nwes", padx=20)
-                Product_image_label.grid(padx=20, pady=40, row=0, column=0, rowspan =10, sticky ="nw")
-                Flipkart_image_label.grid(row=3, column=1, sticky = "nwes", padx=20)
-                ProductPrice_Flipkart_label.grid(row=3, column=3, sticky = "nwes", padx=20)
-                Amazon_image_label.grid(row=5, column=1, sticky = "nwes", padx=20)
-                ProductPrice_Amazon_label.grid(row=5, column=3, sticky = "nwes", padx=20)
+                Product_image_label.grid(padx=20, pady=40, row=0, column=0, rowspan =12, sticky ="nw")
+                Flipkart_image_label.grid(row=3, column=1, sticky = "w", padx=20)
+                ProductPrice_Flipkart_label.grid(row=3, column=3, sticky = "w", padx=50)
+                Amazon_image_label.grid(row=5, column=1, sticky = "w", padx=20)
+                ProductPrice_Amazon_label.grid(row=5, column=3, sticky = "w", padx=50)
 
-                # Grid packing of widgets
-                Image_label.grid(row=0, column=1, sticky="wens", padx=258, pady=50)
-                Search_input.grid(row=1, column= 1)
-                Search_button.grid(row=2, column=1, pady=40)
-                ToPageOne_Button.grid(row=3, column=1, sticky="w", pady=40, padx=258)
+            # Grid packing of widgets
+            Image_label.grid(row=0, column=1, sticky="wens", padx=258, pady=50)
+            Search_input.grid(row=1, column= 1)
+            Search_button.grid(row=2, column=1, pady=40)
+            ToPageOne_Button.grid(row=3, column=1, sticky="w", pady=40, padx=258)
            
+            def CompareProducts():
+                Amazon()
+                ProductCompare()
+                       
             # button to compare prices across websites
             Compare_Icon = ImageTk.PhotoImage(Image.open("Compare.png"))
-            Compare_Button = ttk.Button(top, text = "Compare", image = Compare_Icon, compound = 'left', command = ProductCompare)
+            Compare_Button = ttk.Button(top, text = "Compare", image = Compare_Icon, compound = 'left', command = CompareProducts)
             Compare_Button.image = Compare_Icon
             
             # grid packing of widgets
