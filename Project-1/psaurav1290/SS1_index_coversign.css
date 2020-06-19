@@ -1,0 +1,224 @@
+/*  ||| Universal |||  */
+
+body {
+    background: url("./Media/Pg-wall-min.png");
+    background-position: left;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+    animation: bodysizing 1ms forwards;
+    animation-delay: 3.699s;
+}
+
+
+/*  | Remove Padding |  */
+
+@keyframes bodysizing {
+    to {
+        padding: 0;
+        margin: 0;
+        overflow: auto;
+        width: 100%;
+    }
+}
+
+
+/*  ||| Cover Elements |||  */
+
+
+/*  || Topmost Cover to take everything out of context ||  */
+
+#cover-open-close {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    animation: eraseout 1ms forwards;
+    animation-delay: 3.7s;
+}
+
+
+/*  | Remove praceholder of cover and translate it out |  */
+
+@keyframes eraseout {
+    to {
+        transform: translateY(-150%);
+        position: absolute;
+        display: none;
+    }
+}
+
+
+/*  || Mid Cover to open and close the curtains ||  */
+
+#cover-out {
+    background-color: rgba(80, 60, 60, 0.493);
+    border-radius: 10px;
+    height: 0vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: curtainopen 3.5s cubic-bezier(0.56, 0.43, 0.9, 1.72) forwards;
+}
+
+
+/*  | Open and close curtains. Visible = To fade out text above curtain |  */
+
+@keyframes curtainopen {
+    0% {
+        height: 0vh;
+    }
+    14.28% {
+        height: 90vh;
+    }
+    85.71% {
+        height: 90vh;
+        overflow: hidden;
+    }
+    100% {
+        height: 0vh;
+        overflow: visible;
+    }
+}
+
+
+/*  || Inner Cover to center the text and fade out the text ||  */
+
+#cover-in {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    animation: fade 0.699s ease-in-out forwards;
+    animation-delay: 3s;
+}
+
+
+/*  | Fade out the text |  */
+
+@keyframes fade {
+    to {
+        opacity: 0;
+    }
+}
+
+
+/*  || Container of my-name - hides name during wipein ||  */
+
+#name-hide {
+    overflow: hidden;
+    margin-bottom: 40%;
+}
+
+
+/*  || My_Name layout ||  */
+
+#my-name {
+    margin-top: 10%;
+    opacity: 0.1;
+    transform-origin: -50%;
+    transform: rotate(35deg) translateY(10%);
+    animation: namewipein 0.5s cubic-bezier(0.42, 0, 0.55, 1.65) forwards;
+    animation-delay: 0.5s;
+}
+
+
+/*  | Wipein of name |  */
+
+@keyframes namewipein {
+    to {
+        transform: rotate(0deg) translateY(0%);
+        opacity: 1;
+    }
+}
+
+
+/*  || My_Sign layouts ||  */
+
+#my-sign {
+    position: absolute;
+    width: 80%;
+    margin: 0 10%;
+    top: 0;
+    transform: translateY(60%);
+}
+
+
+/*  || L1 of sign ||  */
+
+#my-sign #L1 path {
+    stroke-dasharray: 980px;
+    stroke-dashoffset: -980px;
+    animation: write1 0.4s linear forwards;
+    animation-delay: 1s;
+}
+
+
+/*  | Write L1 of of sign |  */
+
+@keyframes write1 {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/*  || L2 of sign ||  */
+
+#my-sign #L2 path {
+    stroke-dasharray: 1310px;
+    stroke-dashoffset: -1310px;
+    animation: write2 0.6s linear forwards;
+    animation-delay: 1.4s;
+}
+
+
+/*  | Write L2 of sign |  */
+
+@keyframes write2 {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/*  || L3 of sign ||  */
+
+#my-sign #L3 path {
+    stroke-dasharray: 440px;
+    stroke-dashoffset: 440px;
+    animation: write3 0.2s linear forwards;
+    animation-delay: 2s;
+}
+
+
+/*  | Write L3 of sign |  */
+
+@keyframes write3 {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/*  || Shadow of sign ||  */
+
+#my-sign image {
+    opacity: 0;
+    animation: 0.001ms show forwards;
+    animation-delay: 2.2s;
+}
+
+
+/*  | Show shadow of sign |  */
+
+@keyframes show {
+    to {
+        opacity: 0.5;
+    }
+}
+
+
+/*  ||| Total animation time = 3.7 |||  */

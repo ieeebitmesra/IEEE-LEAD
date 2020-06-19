@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Keyboard </title>
+    <style>
+         :root {
+            font-size: 10px;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        h1 {
+            margin=1rem auto;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 3rem;
+            text-align: center;
+            background-color: burlywood;
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+        
+        .board {
+            background: linear-gradient(to bottom right, #0087c5af, #00bbbbaf);
+            width: 99vw;
+            display: flex;
+            justify-content: flex-start;
+            align-content: center;
+            flex-wrap: wrap;
+            border: solid 0.25rem rgba(255, 255, 255, 0.4);
+            border-radius: 1rem;
+        }
+        
+        .key {
+            width: 5rem;
+            height: 5rem;
+            border: solid 0.25rem rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            line-height: 4rem;
+            font-size: 3rem;
+            text-align: center;
+            color: rgba(52, 0, 121, 0.822);
+            margin: 1rem;
+            transition: 0.1s;
+        }
+        
+        .pressed {
+            box-shadow: 0.2rem 0.2rem rgba(0, 0, 0, 0.233);
+            border: solid 0.25rem rgba(255, 255, 255, 0.9);
+            border-radius: 1rem;
+        }
+        
+        .textbox {
+            overflow: auto;
+            box-sizing: content-box width=99vw;
+            min-width: 40rem;
+            max-height=50vh;
+            min-height: 20rem;
+            border: solid 0.2rem rgba(111, 0, 255, 0.1);
+            font-size: 3rem;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            line-height: 4rem;
+            padding: 2rem;
+            margin: 2rem auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>TYPEWRITER</h1>
+    <div class="board">
+        <div class='key' data-keycode='Q'>Q</div>
+    </div>
+    <div class="textbox"></div>
+
+    <audio src="./Media/Tap.mp3"></audio>
+
+    <script>
+        window.onload = function() {
+            var ar = [{
+                n: 'A',
+                m: 23
+            }, {
+                n: 'B',
+                m: 24
+            }, {
+                n: 'x',
+                m: 2
+            }, {
+                n: 'z',
+                m: 229
+            }, {
+                n: 'y',
+                m: 3
+            }, {
+                n: 'd',
+                m: 3
+            }, {
+                n: 'w',
+                m: 4
+            }, {
+                n: 'q',
+                m: 1
+            }, {
+                n: 'l',
+                m: 1
+            }, {
+                n: 't',
+                m: 1
+            }];
+
+            var arr = [{
+                n: 'A',
+                m: 25
+            }, {
+                n: 'B',
+                m: 25
+            }]
+
+            var sorted = ar.reduce(function(sum, el) {
+                sum += el.m;
+                return sum;
+            }, 0);
+
+            console.log(sorted);
+        }
+
+        const el = document.querySelector('.key');
+        const board = document.querySelector('.board');
+        const textbox = document.querySelector('.textbox');
+        const clip = document.querySelector('audio');
+        var i = 2;
+        const c = 'QWERTYUIOPASDFGHJKLZXCVBNM';
+        const d = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var text = '';
+
+        for (i = 1; i < 26; i++) {
+            var clone = el.cloneNode();
+            clone.dataset.keycode = c[i];
+            clone.textContent = c[i];
+            board.appendChild(clone);
+        }
+
+        function pressed(e) {
+            console.log(e.keyCode, e.key);
+            const keycode = e.keyCode,
+                print = e.key;
+            if (!((keycode >= 65 && keycode <= 90) || keycode == 32))
+                return;
+            const datakeycode = d[keycode - 65];
+            const pressedEl = document.querySelector(`.key[data-keycode=${datakeycode}]`);
+            if (pressedEl) pressedEl.classList.add('pressed');
+            clip.currentTime = 0;
+            clip.play();
+            if (keycode === 8) {
+                text = '';
+            } else {
+                text = text + print;
+            }
+            textbox.textContent = text;
+        }
+
+        function revert(e) {
+            if (e.propertyName != 'box-shadow')
+                return;
+            this.classList.remove('pressed');
+
+            const err = document.querySelector('.pressed');
+            if (err) err.classList.remove('pressed');
+        }
+
+        const allkeys = document.querySelectorAll('.key');
+        window.addEventListener('keydown', pressed);
+        allkeys.forEach(key => key.addEventListener('transitionend', revert));
+    </script>
+</body>
+
+</html>

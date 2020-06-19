@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Clock </title>
+    <meta charset="utf-8">
+
+    <style>
+        html {
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgb(39, 39, 221), rgb(0, 0, 87));
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        .larger {
+            position: relative;
+            width: 32rem;
+            height: 32rem;
+            border: solid rgb(255, 255, 255) 0.35rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .clock {
+            position: relative;
+            width: 30rem;
+            height: 30rem;
+            border: solid rgb(255, 255, 255) 0.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+        }
+        
+        div[class$='hand'] {
+            position: absolute;
+            /* Origin shifting */
+            transform-origin: 100%;
+            transition: all 0.05s;
+            transition-timing-function: cubic-bezier(0.42, 0, 0.59, 1.82);
+        }
+        
+        .minute {
+            height: 0.5rem;
+            width: 13rem;
+            left: 1.5rem;
+            background-color: rgb(0, 146, 90);
+        }
+        
+        .second {
+            height: 0.25rem;
+            width: 11.5rem;
+            left: 3rem;
+            background-color: black;
+        }
+        
+        .hour {
+            height: 1.25rem;
+            width: 10rem;
+            left: 4.5rem;
+            background-color: rgb(165, 0, 0);
+        }
+        
+        .smaller {
+            position: absolute;
+            height: 1.25rem;
+            width: 1.25rem;
+            background-color: rgb(238, 255, 0);
+            border-radius: 50%;
+            /*left: 13.875rem;*/
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="larger">
+        <div class="clock">
+            <div class="hour hand"></div>
+            <div class="minute hand"></div>
+            <div class="second hand"></div>
+            <div class="smaller"></div>
+        </div>
+    </div>
+
+    <script>
+        var secHand = document.querySelector('.second');
+        var minHand = document.querySelector('.minute');
+        var hourHand = document.querySelector('.hour');
+        var secDeg, minDeg, hourDeg, sec, min, hour;
+
+        function tick() {
+            var now = new Date();
+            sec = now.getSeconds();
+            min = now.getMinutes();
+            hour = now.getHours();
+            secDeg = sec * 6 + 90;
+            minDeg = min * 6 + sec / 10 + 90;
+            hourDeg = hour * 30 + min / 2 + 90;
+
+            console.log(now.getSeconds(), now.getMinutes(), now.getHours());
+            console.log(secDeg, minDeg, hourDeg);
+            secHand.style.transform = `rotate(${secDeg}deg)`;
+            minHand.style.transform = `rotate(${minDeg}deg)`;
+            hourHand.style.transform = `rotate(${hourDeg}deg)`;
+        }
+
+        setInterval(tick, 1000);
+    </script>
+</body>
+
+</html>
