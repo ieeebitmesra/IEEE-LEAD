@@ -29,7 +29,7 @@
    #### GUIPAYTYM.PY
    * In this i have created the gui for paytymmall and represented its data for the product entered by the user
    #### finale.py 
-    * prints all my milestone in the console in the form of a dataframe.
+   *  prints all my milestone in the console in the form of a dataframe.
    
    #### all of this acts for the name of the product enetred by the user
     
