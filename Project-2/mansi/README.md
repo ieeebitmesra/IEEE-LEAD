@@ -23,7 +23,7 @@
   #### PAYTYMMALL.PY
   *  In this file i have scraped the price ,name,discount,original price,ratings of the first five products from paytym mall and defined it       in the class.
   #### NEWEBAY.PY
-    * In this file i have scraped the price ,nameof the first five products from paytym mall and defined it in the class.
+   * In this file i have scraped the price ,nameof the first five products from paytym mall and defined it in the class.
    #### NEW.PY
    *  In this i have callled all the different sites through class appended the comman results that is the name ,price of the products with        the site and hence the price can be compared.
    #### GUIPAYTYM.PY
