@@ -1,0 +1,10 @@
+.flex
+{
+    display: flex;
+}
+.items-center{
+    align-items:center;
+}
+.flex-1{
+    flex:1;
+}
