@@ -1,0 +1,5 @@
+requests==2.18.4
+selenium==3.141.0
+ttkthemes==3.0.0
+beautifulsoup4==4.9.1
+Pillow==7.1.2
