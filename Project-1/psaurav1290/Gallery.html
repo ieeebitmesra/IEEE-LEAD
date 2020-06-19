@@ -1,0 +1,165 @@
+<!DOCKTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Gallery</title>
+
+    <style>
+         :root {
+            font-size: 10px;
+        }
+        
+        .panels {
+            width: 100vw;
+            height: 80vh;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .panel {
+            background-position: center;
+            background-size: cover;
+            box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1);
+            transition-timing-function: cubic-bezier(0.57, 0, 0.63, 1);
+            transition-duration: 0.2s;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .panel1 {
+            background-image: url('./Media/1.png');
+        }
+        
+        .panel2 {
+            background-image: url('./Media/2.png');
+        }
+        
+        .panel3 {
+            background-image: url('./Media/3.png');
+        }
+        
+        .panel4 {
+            background-image: url('./Media/4.png');
+        }
+        
+        .panel5 {
+            background-image: url('./Media/5.png');
+        }
+        
+        .text {
+            color: aliceblue;
+            text-align: center;
+            width: 100%;
+            font-family: 'Amatic SC', cursive;
+            font-stretch: extra-condensed;
+            font-size: 2rem;
+            text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+            transition-timing-function: ease-in-out;
+            transition-duration: 0.5s;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .panel *:first-child {
+            transform: translateY(-100%);
+        }
+        
+        .panel.open.active *:first-child {
+            transform: translateY(0%);
+        }
+        
+        .panel *:last-child {
+            transform: translateY(100%);
+        }
+        
+        .panel.open.active *:last-child {
+            transform: translateY(0%);
+        }
+        
+        .open {
+            flex: 4;
+        }
+        
+        .panel.open *:nth-child(2) {
+            flex: 4;
+            font-size: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="panels">
+        <div class="panel panel1">
+            <p class="text">HEY</p>
+            <p class="text">LETS</p>
+            <p class="text">DANCE</p>
+        </div>
+        <div class="panel panel2">
+            <p class="text">GIVE</p>
+            <p class="text">TAKE</p>
+            <p class="text">RECEIVE</p>
+        </div>
+        <div class="panel panel3">
+            <p class="text">EXPERIENCE</p>
+            <p class="text">IT</p>
+            <p class="text">TODAY</p>
+        </div>
+        <div class="panel panel4">
+            <p class="text">GIVE</p>
+            <p class="text">ALL</p>
+            <p class="text">YOU CAN</p>
+        </div>
+        <div class="panel panel5">
+            <p class="text">LIFE</p>
+            <p class="text">IN</p>
+            <p class="text">MOTION</p>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        function openup(e) {
+            if (e.toElement === this) {
+                console.log("Mouse enter in ", e);
+                this.classList.add("open");
+            }
+        }
+
+        function closeup(e) {
+            if (e.toElement === this) {
+                console.log("Mouse exit from ", e);
+                this.classList.remove("open");
+            }
+        }
+
+        function toggle(e) {
+            //console.log("Toggled on ", e);
+            this.classList.toggle("open");
+
+        }
+
+        function drive(e) {
+            console.log("Drive ", e);
+            if (e.propertyName.includes("font")) {
+                this.classList.toggle("active");
+
+            }
+        }
+
+        const allPanel = document.querySelectorAll(".panel");
+        allPanel.forEach(panel => console.log(panel));
+        //allPanel.forEach(panel => panel.addEventListener('mouseenter', openup));
+        //allPanel.forEach(panel => panel.addEventListener('mouseout', closeup));
+        allPanel.forEach(panel => panel.addEventListener('click', toggle));
+        allPanel.forEach(panel => panel.addEventListener('transitionend', drive));
+    </script>
+</body>
+
+</html>
