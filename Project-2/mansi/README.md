@@ -37,7 +37,7 @@
 ### PROBLEMS FACED
 * every site had a different class tags and the image source was difficult to scrape.
 * my sort function is applied to three sites which i scraped while flipkart is not accepting it 
-*  I have made GUI for individual sites but i could not merge them together same with CSV
+* I have made GUI for individual sites but i could not merge them together same with CSV
 * I converted all of these sites into classes but in this my tkinter is not working
 
 ### Scope of imporovement
