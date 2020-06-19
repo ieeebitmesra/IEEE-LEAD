@@ -10,7 +10,7 @@
   1.no of sites scraped:4
   2.Gui for a site is made
   3.additional data has beeen scraped
- ##i have made a class where in the price of all the site is declared in the form of  list along with name and site in the conole 
+ #### i have made a class where in the price of all the site is declared in the form of  list along with name and site in the conole 
 ### Tech Stack
   * PYTHON 
   * different packages of python
