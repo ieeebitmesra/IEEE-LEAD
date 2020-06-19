@@ -1,5 +1,5 @@
-# WEBscraping
-## This is web scraping site which 
+# WEB SCRAPING
+## IEEE PROJECT 2
 ### Name::**Mansi Kanoi**
 ### Group no::2
 ### Milstones Achieved
@@ -8,18 +8,24 @@
 * there are different details from different sites being scraped
 * optional Milestone
   1.no of sites scraped:4
+  2.Gui for a site is made
+  3.additional data has beeen scraped
 ### Tech Stack
   *PYTHON 
   *different packages of python
+  *tkinter
 ### PROBLEMS FACED
-1.every site had a different class tags and the image source was difficult to scrape.
-2.my sort function is applied to three sites which i scraped while flipkart is not accepting it 
-3. i have made GUI for individual sites but i could not merge them together same with CSV
-4.i converted all of these sites into classes but in this my tkinter is not working
+*1.every site had a different class tags and the image source was difficult to scrape.
+*2.my sort function is applied to three sites which i scraped while flipkart is not accepting it 
+*3. I have made GUI for individual sites but i could not merge them together same with CSV
+*4.I converted all of these sites into classes but in this my tkinter is not working
 
 ### Scope of imporovement
-i will solve all the problems and add all plots charts etc 
+I will make a website wherin i will directly call the class and show all the data together ,will try working out on the different layouts, add plots using matplotlib ,andd pictures.
 ### What I have learned 
-i have learnt different packages from PYTHON ,i have learnt how to GOOGLE and how to DEBUG them accordingly .
-#I did not complete this project up to the mark .
+I have learnt different packages from PYTHON ,i have learnt how to GOOGLE and how to DEBUG them accordingly .
+
+### I  have shown the gui for paytym mall
+Screenshot for the same is:
+
 
