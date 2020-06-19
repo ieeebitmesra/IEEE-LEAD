@@ -11,14 +11,14 @@
   2.Gui for a site is made
   3.additional data has beeen scraped
 ### Tech Stack
-  *PYTHON 
-  *different packages of python
-  *tkinter
+  * PYTHON 
+  * different packages of python
+  * tkinter
 ### PROBLEMS FACED
-*1.every site had a different class tags and the image source was difficult to scrape.
-*2.my sort function is applied to three sites which i scraped while flipkart is not accepting it 
-*3. I have made GUI for individual sites but i could not merge them together same with CSV
-*4.I converted all of these sites into classes but in this my tkinter is not working
+* every site had a different class tags and the image source was difficult to scrape.
+* my sort function is applied to three sites which i scraped while flipkart is not accepting it 
+*  I have made GUI for individual sites but i could not merge them together same with CSV
+* I converted all of these sites into classes but in this my tkinter is not working
 
 ### Scope of imporovement
 I will make a website wherin i will directly call the class and show all the data together ,will try working out on the different layouts, add plots using matplotlib ,andd pictures.
