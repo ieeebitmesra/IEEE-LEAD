@@ -1,0 +1,9 @@
+PYTHON LIBRARIES REQUIRED
+
+- tkinter
+- requests
+- webbrowser
+- PIL
+- io
+- bs4
+- urllib
