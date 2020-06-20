@@ -1,0 +1,514 @@
+/*------------------------General Body------------------------*/
+body{
+    margin: 0;
+    padding: 0;
+    line-height: 1.8em;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+section{
+    width: 100%;
+    min-width: 500px;
+}
+/*------------------------General Body------------------------*/
+
+
+/*------------------------container------------------------*/
+.container{
+    margin: auto;
+    overflow: hidden;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+section:nth-child(even){
+    background-color: #333;
+    color: #fff;
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+    line-height: 1.0em;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+button{
+    height: 50px;
+    width: 150px;
+    background: none;
+    color: #fff;
+    border: none;
+    text-align: center;
+    font-size: 20px;
+    background: rgb(45, 117, 96);
+    border-radius: 3px;
+}
+
+button:hover{
+    opacity: 0.5;
+}
+/*------------------------container------------------------*/
+
+
+/*------------------------main header------------------------*/
+#main_header .container{
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    background-color: #333;
+    padding-bottom: 0;
+    opacity: 0.9;
+}
+
+#main_header{
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+.logo{
+    position: relative;
+    display: inline-block;
+    height: 80px;
+    padding-bottom: 0;
+}
+/*------------------------main header------------------------*/
+
+
+/*------------------------navigation bar------------------------*/
+.navbar li{
+    display: inline;
+    padding: 10px;
+}
+
+.navbar ul{
+    list-style: none;
+}
+
+.navbar a{
+    color: whitesmoke;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px;
+    text-shadow: 2px 2px 2px black;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.navbar a:hover,a:active{
+    color: black;
+    background-color: #fff;
+    text-shadow: none;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #333;
+    box-shadow: 2px 2px 8px #fff;
+    animation: appear 2s;
+} 
+
+/*------------------------dropdown------------------------*/
+.menu img{
+height: 50px;
+} 
+
+.menu button{
+    background: none;
+    height: 55px;
+    width: 80px;
+}
+
+.menu, .dropdown{
+    display: none;
+}
+
+@media (max-width:765px) {
+    .navbar ul{
+        display: none;
+    }
+
+    .menu a:hover{
+        background: none;
+    }
+    .menu{
+        display: block;
+        padding-right: 20px;
+    }
+    .dropdown ul{
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+    .dropdown li{
+        padding: 0;
+        font-size: 20px;
+    }
+    .dropdown{
+        font-weight: bold;
+        color: white;
+        background-color: #333;
+        overflow: hidden;
+        opacity: 0.9;
+    }
+    .show {
+        display: block;
+    }
+}
+/*------------------------dropdown------------------------*/
+
+/*------------------------navigation bar------------------------*/
+
+
+/*------------------------showcase------------------------*/
+#showcase .container{
+    padding: 0;
+    width: 100%;
+    position: static;
+    top: 0;
+    box-sizing: border-box;
+}
+
+#showcase{
+    background-image: url("/images/showcase.jpg");
+    padding-top: 1080px;
+}
+
+#showcase .short_text{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    text-shadow: 2px 2px 2px black;
+}
+
+#showcase .short_text:nth-child(1){
+    animation: appear 3s ease-in 0s 1 forwards, disappear 3s ease-out 3s 1 forwards;
+    transform: translate(-50%,-150%);
+}
+
+.animated_header, .short_text:nth-child(2),.short_text:nth-child(3){
+    animation: appear 3s ease-in 6s 1 forwards ;
+    opacity: 0;
+}
+
+#showcase .short_text:nth-child(3){
+    height: 200px;
+    top: 35%;
+}
+
+#showcase .short_text:nth-child(2){
+    transform: translate(-50%,60%);
+}
+/*------------------------showcase------------------------*/
+
+/*------------------------showcase-pages------------------------*/
+#showcase-page .container{
+    height: 350px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#showcase-page img{
+    position: relative;
+    top: -150px;
+}
+
+#showcase-page #short_text_page{
+    position: absolute;
+    text-align: center;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    text-shadow: 2px 2px 2px black;
+    animation: appear 4s ease-in 0s 1 forwards;
+}
+/*------------------------showcase-pages------------------------*/
+
+/*------------------------About------------------------*/
+#about{
+    position: relative;
+    text-align: center;
+}
+
+#about h1{
+    animation: slideright 2s;
+}
+.info_box{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#about_box_1{
+    flex: 3;
+    z-index: 4;
+    text-align: center;
+    box-sizing: border-box;
+    min-width: 430px;
+	padding: 10px;
+    font-size: 30px;
+    animation: appear 3s;
+}
+
+#about_box_1 p{
+    text-align: left;
+}
+
+#about_box_2{
+    color: white;
+    background-color: rgb(99, 93, 93);
+    box-sizing: border-box;
+    flex: 2;
+    z-index: 1;
+    min-width: 500px;
+    margin: 0;
+    font-size: 28px;
+    position: relative;
+    align-items: center;
+    text-align: left;
+    animation: slideleft 2s;
+}
+
+#about_box_2 ul{
+    list-style: none;
+    padding: 10px;
+}
+
+.jt{
+    overflow-wrap: break-word;
+}
+/*------------------------About------------------------*/
+
+
+/*------------------------Education------------------------*/
+#education h1{
+    margin-top: 0;
+    padding-top: 30px;
+}
+.institute_img{
+    width: 100px;
+    border: 3px solid black;
+    border-radius: 50%;
+}
+
+.institution_right, .institution_left{
+    display: flex;
+	align-items: center;
+	justify-content:center;
+}
+
+.institution_right{
+    animation: slideright 2s;
+}
+
+.institution_left{
+    animation: slideleft 2s;
+}
+/*------------------------Education------------------------*/
+
+
+/*------------------------Projects------------------------*/
+#projects h1{
+    padding-top: 20px;
+}
+.project_content{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 30px;
+    
+}
+.project_items{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 5px solid black;
+    margin: 0;
+    width: 300px;
+    text-align: center;
+    margin: 5px;
+}
+
+.project_media img{
+    width: 290px;
+}
+
+.project_jist{
+    padding: 10px 10px;
+    background-color: #fff;
+    color: #333;
+    opacity: 0.5;
+    align-self: stretch;
+}
+
+.project_jist:hover{
+    opacity: 1;
+}
+
+.project_media:hover + .project_jist{
+    opacity: 1;
+}
+
+.project_media:hover{
+    opacity: 0.5;
+}
+/*------------------------Projects------------------------*/
+
+
+/*------------------------Dashboards------------------------*/
+#sketches h1{
+    margin-top: 0;
+    padding-top: 30px;
+}
+
+.dashboard .project_media{
+    border: 5px solid black;
+    line-height: 0;
+}
+
+.dashboard .project_items{
+    border: none;
+}
+
+.dashboard h1{
+    animation: slideright 2s;
+}
+/*------------------------Dashboards------------------------*/
+
+
+/*------------------------Skills------------------------*/
+
+#skills ul{
+    padding: 0;
+    font-size: 40px;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+#skills li{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#skills .base{
+    display: flex;
+    flex-direction: column;
+}
+
+.base b{
+    font-size: 50px;
+}
+
+#skills .list{
+    display: flex;
+    justify-content: space-evenly; 
+    font-size: 40px; 
+}
+
+#skills img{
+    width: 60px;
+}
+/*------------------------Skills------------------------*/
+
+
+/*------------------------Addtional skills------------------------
+
+                        SAME AS PROJECTS                            
+
+--------------------------Addtional skills------------------------*/
+
+
+/*------------------------Contact------------------------*/
+#contact .container{
+    display: flex;
+}
+
+.contact_col_1{
+    flex: 1;
+    align-self: start;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+.contact_col_1 img{
+    height: 25px;
+}
+
+.contact_col_1 ul{
+    list-style: none;
+    padding: 0;
+}
+.contact_col_1 li{
+    display: flex;
+    align-items: center;
+}
+
+.contact_col_1 a:hover{
+    color: blue;
+}
+
+.contact_col_2{
+    flex: 1;
+    align-self: start;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+}
+
+.contact_col_3{
+    text-align: center;
+    flex: 1;
+}
+
+.contact_col_3 img{
+    height: 200px;
+    border: 3px solid black;
+}
+/*------------------------Contact------------------------*/
+
+
+/*------------------------Footer------------------------*/
+.main_footer{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    min-width: 500px;
+}
+/*------------------------Footer------------------------*/
+
+
+/*------------------------Animations------------------------*/
+@keyframes disappear{
+    0%{opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes appear{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+@keyframes slideleft{
+    0%{transform: translate3d(100%,0,0);}
+    100%{transform: translate3d(0,0,0);}
+}
+
+@keyframes slideright{
+    0%{transform: translate3d(-100%,0,0);}
+    100%{transform: translate3d(0,0,0);}
+}
+/*------------------------Animations------------------------*/
