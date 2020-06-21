@@ -1,0 +1,167 @@
+.body {
+    font-size: 1.5rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+hr {
+    border: dotted;
+    color: grey;
+    border-bottom: none;
+    border-width: 6px;
+    width: 5%;
+}
+
+.home-body {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    color: black;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: 1.25rem;
+}
+
+.intro {
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 50px;
+}
+
+.intro_pic {
+    height: 100vh width: 100%;
+}
+
+.intro_text {
+    position: absolute;
+    top: 85%;
+    left: 35%;
+    color: black;
+}
+
+.OpeningText {
+    font-family: 'Merriweather', sans-serif;
+    color: #66BFBFc;
+}
+
+.About {
+    font-size: 1.5rem;
+    padding: 75px 30px 0 30px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.Heading {
+    color: #66BFBF;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+[class*=col-] {
+    display: block;
+    margin: auto;
+    font-size: 1.5rem;
+}
+
+.content {
+    height: 484px;
+}
+
+.About #LaptopCarousel {
+    display: block;
+    margin: auto;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.About #CricketCarousel {
+    display: block;
+    margin: auto;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.Skills {
+    font-size: 1.5rem;
+    padding: 75px 30px 0 30px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.Skills ul {
+    list-style: none;
+}
+
+
+.language {
+    text-align: center;
+    padding-left: 15px;
+}
+
+.FieldsOfInterest {
+    text-align: center;
+}
+
+.h2 {
+    text-align: center;
+    padding-left: 40px;
+}
+
+.LanguagesHeading {
+    padding-left: 15px;
+}
+
+.FieldsOfInterest {
+    padding-left: 15px;
+}
+
+.Projects {
+    font-size: 1.5rem;
+    padding: 75px 30px 0 30px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.UnderConstructionimg {
+    width: 60%;
+    height: 60%;
+}
+
+.PriceComparator {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 1.5rem;
+}
+
+.ComingSoon {
+    text-align: center;
+}
+
+.ContactMe {
+    font-size: 1.5rem;
+    padding: 20px 30px 5px 20px;
+    color: white;
+}
+
+.bottom-container {
+    display: block;
+    height: 250px;
+    text-align: left;
+    font-size: 1.5rem;
+    background-color: rgb(66, 58, 58);
+}
+
+.fa-facebook-square {
+    padding-left: 20px;
+}
+
+.Social {
+    padding-right: 10px;
+}
+
+.Social:hover {
+    color: lightblue;
+    text-decoration: underline;
+}
