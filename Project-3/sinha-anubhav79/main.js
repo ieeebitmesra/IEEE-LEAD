@@ -1,50 +1,152 @@
+/*------------From the HTML--------------------------------*/
 let location = document.querySelector('#location')
 let button = document.querySelector('.search_button')
 let description = document.querySelector('.desc')
 let temperature = document.querySelector('.temp')
+let weather_date = document.querySelector('.weather_date')
 let latitude = document.querySelector('.lat')
 let longitude = document.querySelector('.long')
 let humidity = document.querySelector('.humidity')
 let wind = document.querySelector('.wind')
-//const apiID = ce74ce40545b40e7266cc1f223f7f38c
+let box = document.querySelector('.box')
+let leftslide = document.getElementById('leftslide')
+let rightslide = document.getElementById('rightslide')
+/*------------From the HTML--------------------------------*/
+const apiID = 'ce74ce40545b40e7266cc1f223f7f38c'
 
-button.addEventListener('click', function(){
-    fetch('https://api.openweathermap.org/data/2.5/weather?q='+location.value+'&appid=ce74ce40545b40e7266cc1f223f7f38c'
-    )
-    .then(response => response.json())
-    .then(data => {
-        description.innerHTML = data['weather'][0]['description'];
-        temperature.innerHTML = Math.round(data['main']['temp']-273)+' &degC';
-        location.value = data['name']+', '+data['sys']['country'];
-        latitude.innerHTML = data['coord']['lat'];
-        longitude.innerHTML = data['coord']['lon'];
-        humidity.innerHTML = data['main']['humidity'];
-        wind.innerHTML = data['wind']['speed'];
-        console.log(data)
-    })
-})
+let img_name, lat_value, lon_value, desc_val, temp_val, humid_value, wind_value
+let count = 0
+let var_date = new Date();
+let var_dt = Math.round((var_date.getTime())/1000)
 
-function setTodayDate() {
-    var weekday = new Array(7);
-    weekday[0] = "Sunday";
-    weekday[1] = "Monday";
-    weekday[2] = "Tuesday";
-    weekday[3] = "Wednesday";
-    weekday[4] = "Thursday";
-    weekday[5] = "Friday";
-    weekday[6] = "Saturday";
-
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-    ];
-
-    var today = new Date();
-    var dateHeader = document.getElementById('date');
-
-    var day = weekday[today.getDay()];
-    var date = monthNames[today.getMonth()] +' '+ today.getDate()
-    console.log(dateHeader)
-    dateHeader.innerHTML = "<strong>" + day + "</strong></strong>, " + date;
+const weatherImage = {
+    clouds:1,
+    rain:1,
+    clear:1,
+    thunderstrom:1,
+    snow:1,
+    tornado:1,
+    drizzle:1,
+    haze:1,
+    mist:1,
 }
 
-setTodayDate()
+button.addEventListener('click', getWeather);
+
+/*-----------------------------Function to set background image--------------------------------------------*/
+function setBackImage(img_name){
+    if (weatherImage[img_name.toLowerCase()] == 1){
+        box.style.backgroundImage = 'url(./resources/images/'+img_name+'.jpg)';
+    }else{
+        box.style.backgroundImage = 'url(./resources/images/landscape.png)';
+    }
+}
+/*-----------------------------Function to set background image--------------------------------------------*/
+
+/*-----------------------------Function fetching weather data---------------------------------------------*/
+function getCurrentWeather(count){
+    fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat_value+"&lon="+lon_value+"&units=metric&exclude=hourly,currently&appid="+apiID)
+    .then(resp1 => resp1.json())
+    .then(weather => {
+        console.log(weather)
+        desc_val = weather['daily'][count]['weather'][0]['description'];
+        temp_val = Math.round(weather['daily'][count]['temp']['day']);
+        humid_value = weather['daily'][count]['humidity'];
+        wind_value = weather['daily'][count]['wind_speed'];
+        img_name = weather['daily'][count]['weather'][0]['main'];
+
+        weather_date.innerHTML = set_Date(var_date);
+        description.innerHTML = desc_val;
+        temperature.innerHTML = temp_val;
+        humidity.innerHTML = humid_value+" %";
+        wind.innerHTML = wind_value+" m/s";
+        console.log(img_name)
+        setBackImage(img_name)
+    })
+}
+
+function getPastWeather(){
+    fetch("https://api.openweathermap.org/data/2.5/onecall/timemachine?lat="+lat_value+"&lon="+lon_value+"&units=metric&dt="+var_dt+"&appid="+apiID)
+    .then(resp2 => resp2.json())
+    .then(past_weather =>{
+        console.log(past_weather)
+        desc_val = past_weather['current']['weather'][0]['description'];
+        temp_val = Math.round(past_weather['current']['temp']);
+        humid_value = past_weather['current']['humidity'];
+        wind_value = past_weather['current']['wind_speed'];
+        img_name = past_weather['current']['weather'][0]['main'];
+
+        weather_date.innerHTML = set_Date(var_date);
+        description.innerHTML = desc_val;
+        temperature.innerHTML = temp_val;
+        humidity.innerHTML = humid_value+" %";
+        wind.innerHTML = wind_value+" m/s";
+        console.log(img_name)
+        setBackImage(img_name)
+    })
+}
+/*-----------------------------Function fetching weather data----------------------------------------------*/
+/*-----------------------------Next and previous Buttons----------------------------------------------*/
+rightslide.addEventListener('click',() => {
+        count+=1;
+        var_date.setDate(var_date.getDate()+1)
+        var_dt = Math.round((var_date.getTime())/1000)
+        if(count>=0 && count<8)
+            getCurrentWeather(count);
+        else if(count>-6 && count<0)
+            getPastWeather()
+})
+leftslide.addEventListener('click',() => {
+        count-=1;
+        var_date.setDate(var_date.getDate()-1)
+        var_dt = Math.round((var_date.getTime())/1000)
+        if(count>=0 && count<8)
+            getCurrentWeather(count);
+        else if(count>-6 && count<0)
+            getPastWeather()
+})
+/*-----------------------------Next and previous Buttons----------------------------------------------*/
+
+/*-----------------------------Search function----------------------------------------------*/
+function getWeather(){
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+location.value+'&appid='+apiID)
+    .then(response => response.json())
+    .then(data => {
+        location.value = data['name']+', '+data['sys']['country'];
+        lat_value = data['coord']['lat'];
+        lon_value = data['coord']['lon'];
+        let dir_lat = ' N', dir_lon = ' E'
+        if (lat_value<0)  dir_lat = ' S' 
+        if (lon_value<0)  dir_lon = ' W'
+        latitude.innerHTML = Math.abs(lat_value)+dir_lat;
+        longitude.innerHTML = Math.abs(lon_value)+dir_lon;
+        
+        getCurrentWeather(0)
+    })
+    
+    document.getElementById("result").style.display = "block";
+}
+/*-----------------------------Search function----------------------------------------------*/
+/*--------------------------------Function to get current date----------------------------------------------------------------------------------*/
+function set_Date(display_date) {
+    
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let date = monthNames[display_date.getMonth()] +' '+ display_date.getDate()
+    return date;
+}
+
+function set_Day(){
+    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const today = new Date();
+    let day = weekday[today.getDay()];
+    return day;
+}
+/*--------------------------------Function to set current date----------------------------------------------------------------------------------*/
+
+function setHeaderDate(){
+    var current_date = document.getElementById('date');
+    const today = new Date();
+    current_date.innerHTML = "<strong>" + set_Day() + "</strong>, " + set_Date(today);
+}
+
+setHeaderDate();
