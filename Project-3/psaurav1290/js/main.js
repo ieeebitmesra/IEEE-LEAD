@@ -146,8 +146,8 @@ textField.addEventListener('keypress', function (event) {
 });
 
 getWeatherInfo = () => {
-	var WEATHER_API_KEY = "7065de1505e424f29d33baf26a38155b",
-		GEO_API_KEY = "7c7dbb02adcb4ff0b8c8588c25b8e793";
+	var weaThrottle = "7065de1505e424f29d33baf26a38155b",
+		geoThrottle = "7c7dbb02adcb4ff0b8c8588c25b8e793";
 
 	dmsToDeg = (deg = 0, min = 0, sec = 0, ms = 0, dir = "N") => {
 		let deci = (deg / 1 + min / 60 + sec / 3600 + ms / 216000)
@@ -184,7 +184,7 @@ getWeatherInfo = () => {
 	}
 
 	inputUri = encodeURI(inputPlace);
-	geoUrl = `https://api.opencagedata.com/geocode/v1/json?q=${inputUri}&key=${GEO_API_KEY}&limit=1`;
+	geoUrl = `https://api.opencagedata.com/geocode/v1/json?q=${inputUri}&key=${geoThrottle}&limit=1`;
 
 	const now = new Date();
 	const pastHour = now.getUTCHours()
@@ -196,6 +196,7 @@ getWeatherInfo = () => {
 		if (currentCoordinatesCalculating) {
 			info["place"] = "Your Location"
 			globalCoordinates = currentCoordinates
+			// console.log("Current Coordinates calculating - ", currentCoordinates)
 		} else {
 			info["place"] = inputPlace
 			if (!data.total_results)
@@ -204,97 +205,127 @@ getWeatherInfo = () => {
 				throw new Error("Daily Quota Exceeded")
 			globalCoordinates["lat"] = dmsToDeg(...data.results[0].annotations.DMS.lat.split(/[^\d\w]+/)).toFixed(3);
 			globalCoordinates["lng"] = dmsToDeg(...data.results[0].annotations.DMS.lng.split(/[^\d\w]+/)).toFixed(3);
+			// console.log("Entered Coordinates calculating - ", globalCoordinates)
 		}
 	}).then((nowInfo) => {
-		var nowUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${globalCoordinates.lat}&lon=${globalCoordinates.lng}&appid=${WEATHER_API_KEY}&units=metric`;
+		// console.log("Now Global Coordinates - ", globalCoordinates)
+		var nowUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${globalCoordinates.lat}&lon=${globalCoordinates.lng}&appid=${weaThrottle}&units=metric`;
+		// console.log(nowUrl)
 		var fetchPromiseNow = fetch(nowUrl);
 		fetchPromiseNow.then(response => {
 			return response.json();
 		}).then(data => {
+			// console.log("Now data = ", data)
 			info[0] = storeInfo(data.main.temp, data.main.humidity, data.wind.speed, data.weather[0].main, data.weather[0].description, data.weather[0].icon, now);
 			document.querySelector(".background-blur").style.backgroundImage = `url(img/weather-wall/${info[0].icon}.png)`
 			reflectInformationCard(nowCard, 0)
+			// console.log("Now info = ", info["0"])
 		}).catch((errorMessage) => {
+			// console.log("Now error generated")
 			alert(errorMessage)
 		});
 	}).then((forecastInfo) => {
-		var forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${globalCoordinates.lat}&lon=${globalCoordinates.lng}&appid=${WEATHER_API_KEY}&units=metric`;
+		var forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${globalCoordinates.lat}&lon=${globalCoordinates.lng}&appid=${weaThrottle}&units=metric`;
+		// console.log("Forecast url = ", forecastUrl)
 		var fetchPromiseForecast = fetch(forecastUrl);
 		fetchPromiseForecast.then(response => {
 			return response.json();
 		}).then(data => {
+			// console.log("Forecast data = ", data)
 			var index, i = 7;
 			var nowSec = now.getTime()
 			for (index = 1; index <= 5; index++, i += 8) {
 				info[index] = storeInfo(data.list[i].main.temp, data.list[i].main.humidity, data.list[i].wind.speed, data.list[i].weather[0].main, data.list[i].weather[0].description, data.list[i].weather[0].icon, new Date(nowSec + index * 86400000));
 				reflectBatchContainer(batchCellsForecast, index, index - 1)
+				// console.log(`Forecast info [${index}] = `, info[index])
 			}
 		}).catch((errorMessage) => {
+			// console.log("Forecast error generated")
 			alert(errorMessage)
 		})
 	}).then((pastInfo1) => {
 		nowTime -= 86400
 		var nowDateLocal = new Date(nowTime * 1000)
-		var pastUrl = `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${globalCoordinates.lat}&lon=${globalCoordinates.lng}&dt=${nowTime}&appid=${WEATHER_API_KEY}&units=metric`;
+		var pastUrl = `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${globalCoordinates.lat}&lon=${globalCoordinates.lng}&dt=${nowTime}&appid=${weaThrottle}&units=metric`;
+		// console.log("Past 1 url = ", pastUrl)
 		var fetchPromisePast = fetch(pastUrl);
 		fetchPromisePast.then(response => {
 			return response.json();
 		}).then(data => {
+			// console.log("Past 1 data = ", data)
 			info[-1] = storeInfo(data.hourly[pastHour].temp, data.hourly[pastHour].humidity, data.hourly[pastHour].wind_speed, data.hourly[pastHour].weather[0].main, data.hourly[pastHour].weather[0].description, data.hourly[pastHour].weather[0].icon, nowDateLocal)
 			reflectBatchContainer(batchCellsPast, -1, 4)
+			// console.log("Past 1 info = ", info["-1"])
 		}).catch((errorMessage) => {
+			// console.log("Past 1 error generated")
 			alert(errorMessage)
 		});
 	}).then((pastInfo2) => {
 		nowTime -= 86400
 		var nowDateLocal = new Date(nowTime * 1000)
-		var pastUrl = `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${globalCoordinates.lat}&lon=${globalCoordinates.lng}&dt=${nowTime}&appid=${WEATHER_API_KEY}&units=metric`;
+		var pastUrl = `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${globalCoordinates.lat}&lon=${globalCoordinates.lng}&dt=${nowTime}&appid=${weaThrottle}&units=metric`;
+		// console.log("Past 2 url = ", pastUrl)
 		var fetchPromisePast = fetch(pastUrl);
 		fetchPromisePast.then(response => {
 			return response.json();
 		}).then(data => {
+			// console.log("Past 2 data = ", data)
 			info[-2] = storeInfo(data.hourly[pastHour].temp, data.hourly[pastHour].humidity, data.hourly[pastHour].wind_speed, data.hourly[pastHour].weather[0].main, data.hourly[pastHour].weather[0].description, data.hourly[pastHour].weather[0].icon, nowDateLocal)
 			reflectBatchContainer(batchCellsPast, -2, 3)
+			// console.log("Past 2 info = ", info["-2"])
 		}).catch((errorMessage) => {
+			// console.log("Past 2 error generated")
 			alert(errorMessage)
 		});
 	}).then((pastInfo3) => {
 		nowTime -= 86400
 		var nowDateLocal = new Date(nowTime * 1000)
-		var pastUrl = `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${globalCoordinates.lat}&lon=${globalCoordinates.lng}&dt=${nowTime}&appid=${WEATHER_API_KEY}&units=metric`;
+		var pastUrl = `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${globalCoordinates.lat}&lon=${globalCoordinates.lng}&dt=${nowTime}&appid=${weaThrottle}&units=metric`;
+		// console.log("Past 3 url = ", pastUrl)
 		var fetchPromisePast = fetch(pastUrl);
 		fetchPromisePast.then(response => {
 			return response.json();
 		}).then(data => {
+			// console.log("Past 3 data = ", data)
 			info[-3] = storeInfo(data.hourly[pastHour].temp, data.hourly[pastHour].humidity, data.hourly[pastHour].wind_speed, data.hourly[pastHour].weather[0].main, data.hourly[pastHour].weather[0].description, data.hourly[pastHour].weather[0].icon, nowDateLocal)
 			reflectBatchContainer(batchCellsPast, -3, 2)
+			// console.log("Past 3 info = ", info["-3"])
 		}).catch((errorMessage) => {
+			// console.log("Past 3 error generated")
 			alert(errorMessage)
 		});
 	}).then((pastInfo4) => {
 		nowTime -= 86400
 		var nowDateLocal = new Date(nowTime * 1000)
-		var pastUrl = `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${globalCoordinates.lat}&lon=${globalCoordinates.lng}&dt=${nowTime}&appid=${WEATHER_API_KEY}&units=metric`;
+		var pastUrl = `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${globalCoordinates.lat}&lon=${globalCoordinates.lng}&dt=${nowTime}&appid=${weaThrottle}&units=metric`;
+		// console.log("Past 4 url = ", pastUrl)
 		var fetchPromisePast = fetch(pastUrl);
 		fetchPromisePast.then(response => {
 			return response.json();
 		}).then(data => {
+			// console.log("Past 4 data = ", data)
 			info[-4] = storeInfo(data.hourly[pastHour].temp, data.hourly[pastHour].humidity, data.hourly[pastHour].wind_speed, data.hourly[pastHour].weather[0].main, data.hourly[pastHour].weather[0].description, data.hourly[pastHour].weather[0].icon, nowDateLocal)
 			reflectBatchContainer(batchCellsPast, -4, 1)
+			// console.log("Past 4 info = ", info["-4"])
 		}).catch((errorMessage) => {
+			// console.log("Past 4 error generated")
 			alert(errorMessage)
 		});
 	}).then((pastInfo5) => {
 		nowTime -= 86400
 		var nowDateLocal = new Date(nowTime * 1000)
-		var pastUrl = `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${globalCoordinates.lat}&lon=${globalCoordinates.lng}&dt=${nowTime}&appid=${WEATHER_API_KEY}&units=metric`;
+		var pastUrl = `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${globalCoordinates.lat}&lon=${globalCoordinates.lng}&dt=${nowTime}&appid=${weaThrottle}&units=metric`;
+		// console.log("Past 4 url = ", pastUrl)
 		var fetchPromisePast = fetch(pastUrl);
 		fetchPromisePast.then(response => {
 			return response.json();
 		}).then(data => {
+			// console.log("Past 5 data = ", data)
 			info[-5] = storeInfo(data.hourly[pastHour].temp, data.hourly[pastHour].humidity, data.hourly[pastHour].wind_speed, data.hourly[pastHour].weather[0].main, data.hourly[pastHour].weather[0].description, data.hourly[pastHour].weather[0].icon, nowDateLocal)
 			reflectBatchContainer(batchCellsPast, -5, 0)
+			// console.log("Past 5 info = ", info["-5"])
 		}).catch((errorMessage) => {
+			// console.log("Past 5 error generated")
 			alert(errorMessage)
 		});
 	}).catch((errorMessage) => {
