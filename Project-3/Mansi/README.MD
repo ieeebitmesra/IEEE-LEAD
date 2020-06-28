@@ -58,8 +58,11 @@
 - It is a simple website wherein:
 
   1.  finalweather has an html file which on running returns the weather details for today.
+        **FOR_CURRENT_DAY::**[Link](https://mansikanoi.github.io/WEATHER_APP/fianl_weather_host/)
   2.  previous weather has an html file which running returns the weather details for last 5 days .
-  3.  afterweather has an html file which on running returns the weather details foe the next 5 days .
+       **FOR_PREVIOUS_FORECAST::**[Link](https://mansikanoi.github.io/WEATHER_APP/previous_weather_host/)
+  3.  afterweather has an html file which on running returns the weather details for the next 5 days .
+       **FOR_AFTER_FORECAST::**[Link](https://mansikanoi.github.io/WEATHER_APP/after_weather_host/)
 
 ### Scope of imporovement
 
