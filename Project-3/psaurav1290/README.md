@@ -1,8 +1,8 @@
 # README
 
-## PORTFOLIO Website
+## WeatherApp
 
-####MILESTONES ACHIEVED :
+#### MILESTONES ACHIEVED :
 
 1. Fetching latitude and longitude of a given location through API (opencagedata.com)
 2. Fetching weather of given location through API call (openweathermap.org)
@@ -14,6 +14,7 @@
 - HTML
 - CSS3
 - JavaScript
+- jQuery
 - Bootstrap
 
 #### DESCRIPTION :
@@ -34,7 +35,7 @@ I designed the site using well synchronised colour schemes. I laid special focus
 1. Perfecting layouts was really a big challenge
 2. Making the website responsive
 3. Handling of errors
-4. Implementation of promises and fetch API
+4. Implementation asynchronous promises and fetch API
 
 #### SCOPE OF IMPROVEMENT :
 
