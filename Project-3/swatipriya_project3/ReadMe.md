@@ -72,3 +72,6 @@ WHAT DID I LEARN FROM THIS PROJECT -
 	This is my first project using API. While making this project I learned many new concepts. It was a 'learn on the go experience,' the best part of the project.
 
 	After this project I am definitely going to explore more about js.
+
+LINK FOR THIS PROJECT - https://swatipriya2805.github.io/weather/
+
