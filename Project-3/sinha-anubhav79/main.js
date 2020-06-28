@@ -25,7 +25,7 @@ const weatherImage = {
     clouds:1,
     rain:1,
     clear:1,
-    thunderstrom:1,
+    thunderstorm:1,
     snow:1,
     tornado:1,
     drizzle:1,
