@@ -1,0 +1,487 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-image: url(assets/northernlights.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-repeat: repeat-y;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px;
+    color: black;
+    margin-top: 50px;
+}
+
+::placeholder {
+    color: black;
+    opacity: 1;
+}
+
+.search-input {
+    display: block;
+    width: 50%;
+    height: 60px;
+    font-size: 2em;
+    border-radius: 8px;
+    border-color: transparent;
+    background-color: white;
+    padding: 5px 8px;
+}
+
+.Page {
+    margin-top: 30px;
+}
+
+.locationButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px;
+    margin-top: 50px;
+}
+
+.yourLocationButton {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin: auto;
+    width: 50%;
+    min-height: 60px;
+    font-size: 2em;
+    border-radius: 8px;
+    border-color: transparent;
+    background-color: white;
+}
+
+.yourLocationButton:hover {
+    background-color: #484848;
+    color: white;
+}
+
+.currentWeatherHeading {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: grey;
+    margin: auto;
+    padding-top: 4px;
+}
+
+.DayForecast {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: grey;
+    background-color: white;
+    margin: auto;
+    width: 80%;
+    height: 40px;
+    padding-top: 4px;
+}
+
+h4 {
+    margin-bottom: none;
+}
+
+.currentWeatherInformation {
+    display: block;
+    margin: auto;
+    margin-bottom: 50px;
+    background-color: white;
+    width: 50%;
+    height: 200px;
+    border-radius: 12px;
+}
+
+.Day_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: white;
+    width: 80%;
+    min-height: 80px;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: grey;
+}
+
+.Day_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: white;
+    width: 80%;
+    min-height: 80px;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: grey;
+}
+
+.Day_3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: white;
+    width: 80%;
+    min-height: 80px;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    margin-bottom: 30px;
+}
+
+.currentDate {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.currentIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.currentTemp {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.currentWeather {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.currentHigh-Low {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.date_1 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.icon_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.temp_1 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.weather_1 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.high-low_1 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.date_2 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.icon_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.temp_2 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.weather_2 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+
+}
+
+.high-low_2 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.date_3 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.icon_3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.temp_3 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.weather_3 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.high-low_3 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.currentDateLocation {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.currentIconLocation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.currentTempLocation {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.currentWeatherLocation {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.currentHigh-LowLocation {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.dateLocation_1 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.iconLocation_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tempLocation_1 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.weatherLocation_1 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.high-lowLocation_1 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+
+.dateLocation_2 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.iconLocation_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tempLocation_2 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.weatherLocation_2 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.high-lowLocation_2 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+
+.dateLocation_3 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.iconLocation_3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tempLocation_3 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.weatherLocation_3 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.high-lowLocation_3 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
