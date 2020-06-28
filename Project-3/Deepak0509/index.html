@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap-4.0.0-alpha.6-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Get Weather</title>
+
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-toggleable-md bg-inverse navbar-inverse">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Get Weather</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#Your Location">Your Location</a>
+                <a class="nav-item nav-link" href="#Any City">Any City</a>
+            </div>
+        </div>
+    </nav>
+    <div class="row Page">
+        <div class="col-sm-6">
+            <div class="locationButton">
+                <button onclick="locationWeather()" class="yourLocationButton" id="Your Location" type="button">Weather of your location</button>
+            </div>
+            <div class="currentWeatherInformation">
+                <div class=currentWeatherHeading>
+                    <h3>Current Weather</h3>
+                </div>
+                <div class="currentDateLocation">-</div>
+                <div class="currentIconLocation">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="currentTempLocation">-<span>°c</span></div>
+                <div class="currentWeatherLocation">-</div>
+                <div class="currentHigh-LowLocation">-</div>
+            </div>
+            <div class="DayForecast">
+                <h3>3-Day Weather Forecast</h3>
+            </div>
+            <div class="row Day_1">
+                <div class="col-sm-3 dateLocation_1">-</div>
+                <div class="col-sm-2 iconLocation_1">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 tempLocation_1">-<span>°c</span></div>
+                <div class="col-sm-3 weatherLocation_1">-</div>
+                <div class="col-sm-2 high-lowLocation_1">-</div>
+            </div>
+            <div class="row Day_2">
+                <div class="col-sm-3 dateLocation_2">-</div>
+                <div class="col-sm-2 iconLocation_2">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 tempLocation_2">-<span>°c</span></div>
+                <div class="col-sm-3 weatherLocation_2">-</div>
+                <div class="col-sm-2 high-lowLocation_2">-</div>
+            </div>
+            <div class="row Day_3">
+                <div class="col-sm-3 dateLocation_3">-</div>
+                <div class="col-sm-2 iconLocation_3">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 tempLocation_3">-<span>°c</span></div>
+                <div class="col-sm-3 weatherLocation_3">-</div>
+                <div class="col-sm-2 high-lowLocation_3">-</div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="searchBar">
+                <input name="query" class="search-input" type="text" id="Any City" placeholder="Enter any City" autocomplete="off">
+            </div>
+            <div class="currentWeatherInformation">
+                <div class=currentWeatherHeading>
+                    <h3>Current Weather</h3>
+                </div>
+                <div class="currentDate">-</div>
+                <div class="currentIcon">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="currentTemp">-<span>°c</span></div>
+                <div class="currentWeather">-</div>
+                <div class="currentHigh-Low">-</div>
+            </div>
+            <div class="DayForecast">
+                <h3>3-Day Weather Forecast</h3>
+            </div>
+            <div class="row Day_1">
+                <div class="col-sm-3 date_1">-</div>
+                <div class="col-sm-2 icon_1">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 temp_1">-<span>°c</span></div>
+                <div class="col-sm-3 weather_1">-</div>
+                <div class="col-sm-2 high-low_1">-</div>
+            </div>
+            <div class="row Day_2">
+                <div class="col-sm-3 date_2">-</div>
+                <div class="col-sm-2 icon_2">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 temp_2">-<span>°c</span></div>
+                <div class="col-sm-3 weather_2">-</div>
+                <div class="col-sm-2 high-low_2">-</div>
+            </div>
+            <div class="row Day_3">
+                <div class="col-sm-3 date_3">-</div>
+                <div class="col-sm-2 icon_3">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 temp_3">-<span>°c</span></div>
+                <div class="col-sm-3 weather_3">-</div>
+                <div class="col-sm-2 high-low_3">-</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="bootstrap-4.0.0-alpha.6-dist/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="app.js" charset="utf-8"></script>
+
+</body>
+
+</html>
