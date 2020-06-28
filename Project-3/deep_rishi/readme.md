@@ -31,4 +31,4 @@ In future i am going to modify the presentation of my website and to also add a 
 
 What I Learned?
 
-I learned how to use Jvascript for extracting data and linking it with HTML. I also learned the importance of api-keys.
+I learned how to use Javascript for extracting data and linking it with HTML. I also learned the importance of api-keys.
