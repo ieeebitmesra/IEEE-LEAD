@@ -10,7 +10,7 @@
 
 - fetched latitude of a given location through API call
 - fetched weather for a given location through API call
-- fetched location's weather for a past 5 days and displayed weather of   entered city and displaying the weather details
+- fetched location's weather for a past 5 days and displayed weather of entered city and displaying the weather details
 - fetched location's weather for a next 5 days and displayed weather of entered city and displaying the weather details
 - optional Milestone
   1.customization according to the detail of the project
