@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Weather Application</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="design.css">
+        <link rel="stylesheet" href="animation.css">
+    </head>
+    <body>
+        <div class="ani">
+            <div class='container'>
+            <div class='loader-container'>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class='spinner-container'>
+               <div class="spinner-path">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div>
+              </div>
+            </div>
+          </div>
+          
+          
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+              <filter id="gooey">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="goo" />
+                <feBlend in="SourceGraphic" in2="goo" />
+                </filter>
+            </defs>
+          </svg>
+        </div>
+
+        <div class="page-content">
+
+
+            <nav class="navbar">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="historical.html" class="nav-item historical-weather">Historical Weather</a>
+                <input type="text" class="search-query nav-input" placeholder="Search any City,State,Country">
+                <button class="search-weather nav-button">Search</button>    
+            </nav>
+    
+    
+            <main>
+                <div class="forecast">
+    
+                    <!-- center content -->
+                    <div class="content-main">
+                        <p class="temp">32°C</p>
+                        <p class="weather-desc-present">Weather desc</p>
+                        <!-- <p class="aqi">AQI : <span class="aqi-data"></span>54</p> -->
+                    </div>
+                    
+    
+                    <!-- bottom content -->
+                    <div class="content-below">
+                        <div class="left-content">
+                            <div class="row-left">
+                                <div class="col-0">
+                                    Details
+                                </div>
+                            </div>
+                            <div class="row-left">
+                                <div class="col col-1">
+                                    Feels Like : <span class="feels-like-now">XXX</span>
+                                </div>
+                                <div class="col col-2">
+                                    Humidity : <span class="humidity-now">XXX</span>
+                                </div>
+                            </div>
+                            <div class="row-left">
+                                <div class="col col-3">
+                                    UV Index : <span class="uv-index-now">XXX</span>
+                                </div>
+                                <div class="col col-4">
+                                    Pressure : <span class="pressure-now">XXX</span>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="center-content">
+                            <div class="row-center row-center-1">
+                                Hourly Forecast
+                            </div>
+                            <div class="row-center row-center-2">
+                                <div class="col-center">
+                                    <div class="time">
+                                        <span class="time-0">Time</span>
+                                    </div>
+                                    <div class="png">
+                                        <img src="" class="png-0"></img>
+                                    </div>
+                                    <div class="temperature">
+                                        <span class="temp-0">temp</span>
+                                    </div>
+                                </div>
+                                <div class="col-center">
+                                    <div class="time">
+                                        <span class="time-1">Time</span>
+                                    </div>
+                                    <div class="png">
+                                        <img src="" class="png-1"></img>
+                                    </div>
+                                    <div class="temperature">
+                                        <span class="temp-1">temp</span>
+                                    </div>
+                                </div>
+                                <div class="col-center">
+                                    <div class="time">
+                                        <span class="time-2">Time</span>
+                                    </div>
+                                    <div class="png">
+                                        <img src="" class="png-2"></img>
+                                    </div>
+                                    <div class="temperature">
+                                        <span class="temp-2">temp</span>
+                                    </div>
+                                </div>
+                                <div class="col-center">
+                                    <div class="time">
+                                        <span class="time-3">Time</span>
+                                    </div>
+                                    <div class="png">
+                                        <img src="" class="png-3"></img>
+                                    </div>
+                                    <div class="temperature">
+                                        <span class="temp-3">temp</span>
+                                    </div>
+                                </div>
+                                <div class="col-center">
+                                    <div class="time">
+                                        <span class="time-4">Time</span>
+                                    </div>
+                                    <div class="png">
+                                        <img src="" class="png-4"></img>
+                                    </div>
+                                    <div class="temperature">
+                                        <span class="temp-4">temp</span>
+                                    </div>
+                                </div>
+                                <div class="col-center">
+                                    <div class="time">
+                                        <span class="time-5">Time</span>
+                                    </div>
+                                    <div class="png">
+                                        <img src="" class="png-5"></img>
+                                    </div>
+                                    <div class="temperature">
+                                        <span class="temp-5">temp</span>
+                                    </div>
+                                </div>
+                                <div class="col-center">
+                                    <div class="time">
+                                        <span class="time-6">Time</span>
+                                    </div>
+                                    <div class="png">
+                                        <img src="" class="png-6"></img>
+                                    </div>
+                                    <div class="temperature">
+                                        <span class="temp-6">temp</span>
+                                    </div>
+                                </div>
+                                <div class="col-center">
+                                    <div class="time">
+                                        <span class="time-7">Time</span>
+                                    </div>
+                                    <div class="png">
+                                        <img src="" class="png-7"></img>
+                                    </div>
+                                    <div class="temperature">
+                                        <span class="temp-7">temp</span>
+                                    </div>
+                                </div>
+                                <div class="col-center">
+                                    <div class="time">
+                                        <span class="time-8">Time</span>
+                                    </div>
+                                    <div class="png">
+                                        <img src="" class="png-8"></img>
+                                    </div>
+                                    <div class="temperature">
+                                        <span class="temp-8">temp</span>
+                                    </div>
+                                </div>
+                                <div class="col-center">
+                                    <div class="time">
+                                        <span class="time-9">Time</span>
+                                    </div>
+                                    <div class="png">
+                                        <img src="" class="png-9"></img>
+                                    </div>
+                                    <div class="temperature">
+                                        <span class="temp-9">temp</span>
+                                    </div>
+                                </div>
+                                <div class="col-center">
+                                    <div class="time">
+                                        <span class="time-10">Time</span>
+                                    </div>
+                                    <div class="png">
+                                        <img src="" class="png-10"></img>
+                                    </div>
+                                    <div class="temperature">
+                                        <span class="temp-10">temp</span>
+                                    </div>
+                                </div>
+                                <div class="col-center">
+                                    <div class="time">
+                                        <span class="time-11">Time</span>
+                                    </div>
+                                    <div class="png">
+                                        <img src="" class="png-11"></img>
+                                    </div>
+                                    <div class="temperature">
+                                        <span class="temp-11">temp</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="right-content">
+                            <div class="row-right row-right-0">
+                                Forecast
+                            </div>
+                            <div class="row-right row-right-1">
+                                <span class="today">Today-</span><span class="weather-desc-today">Weather Desc</span><span>&emsp;&emsp;&emsp;</span><span class="max-min-today">max/min</span>&emsp;<img src="" class="today-png"></img>
+                            </div>
+                            <div class="row-right row-right-2">
+                                <span class="tomorrow">Tomorrow-</span><span class="weather-desc-tomorrow">Weather Desc</span><span>&emsp;</span><span class="max-min-tomorrow">max/min</span>&emsp;<img src="" class="tomorrow-png"></img>
+                            </div>
+                            <div class="row-right row-right-3">
+                                <a href="fiveday.html" class="five-day-button">5-day Forecast</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+            </main>
+    
+    
+            <script src="js files/public.js"></script>
+            <script src="js files/contentWeather.js"></script>
+            <script src="js files/updateFiveDay.js"></script>
+            <script src="js files/weather.js"> </script>    
+        </div>
+        <!-- Navbar content -->
+    </body>
+</html>
+
+

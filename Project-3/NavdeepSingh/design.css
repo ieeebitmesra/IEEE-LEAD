@@ -1,0 +1,348 @@
+/* Animation content */
+
+
+body{
+    font-family: 'Asap', sans-serif;
+    background-image: url('images/rainy day.jpeg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin:0;
+}
+
+
+
+
+/* Navbar Styles */
+.navbar{
+    text-align:right;
+    padding:20px;
+    font-size: 20px;
+}
+.nav-item{
+    padding:10px;
+    color: white;
+    text-decoration: none;
+    display:inline-block;
+}
+.nav-button,.nav-input{
+    padding: 8px;
+    margin:0 0 0 10px;
+    border-radius: 8px;
+    border-style:solid;
+    border-color: #2c111196;
+    /* font-size:16px; */
+}
+.nav-button{
+    margin:0;
+    background-color: white;
+}
+input:focus{
+    outline: none;
+}
+.nav-button:focus{
+    outline:none;
+}
+
+
+
+/* center content */
+.forecast{
+    color:white;
+}
+.temp{
+    position: relative;
+    font-size:6rem;
+    text-align: center;
+    top:120px;
+    margin: 0;
+}
+
+.weather-desc-present{
+    text-align: center;
+    position: relative;
+    top:115px;
+    font-size: 1.5rem;
+    margin:0;
+}
+.aqi{
+    text-align: center;
+    position: relative;
+    top:120px;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+
+
+
+/* content below */
+.content-below{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top:140px;
+    margin:0 30px;
+    flex-wrap: wrap;
+}
+.left-content,.right-content,.center-content{
+    background-color: rgba(56, 56, 56, 0.5);
+    border-radius:15px;
+    margin:30px;
+}
+
+
+/* left content */
+.left-content{
+    height:160px;
+}
+
+.row-left{
+    display: flex;
+}
+.col{
+    padding:20px;
+    width:140px;
+}
+.col-0{
+    padding:10px;
+}
+.col-1{
+    border-right:1px solid white;
+    border-top:1px solid white;
+}
+.col-2{
+    border-top:1px solid white;
+}
+.col-3{
+    border-right:1px solid white;
+    border-top:1px solid white;
+}
+.col-4{
+    border-top:1px solid white;
+}
+
+
+/* center content */
+.center-content{
+    width:322px;
+    height:200px;
+    overflow:auto;
+}
+.row-center-1{
+    border-bottom:1px solid white;
+    width:960px;
+}
+.row-center-2{
+    display: flex;
+}
+.col-center{
+    min-width:80px;
+    text-align: center;
+    height:auto;
+    border-right:1px solid white;
+}
+.time,.temperature,.png{
+    padding:2px;
+}
+
+/* right content */
+.right-content{
+    display: block;
+    width:408px;
+    height: auto;
+}
+.row-right,.row-center{
+    padding: 15px;
+}
+.five-day-button{
+    color:white;
+    text-decoration: none;
+}
+.row-right-0{
+    border-bottom:1px solid white;
+}
+.row-right-1{
+    border-bottom:1px solid white;
+    height:25px;
+}
+.row-right-2{
+    border-bottom:1px solid white;
+    height:25px;
+}
+.row-right-3{
+    text-align: center;
+}
+.today-png{
+    position: relative;
+    bottom:10px;
+}
+.today,.weather-desc-today,.max-min-today{
+    position: relative;
+    bottom: 30px;
+}
+.tomorrow,.weather-desc-tomorrow,.max-min-tomorrow{
+    position: relative;
+    bottom: 30px;
+}
+.tomorrow-png{
+    position: relative;
+    bottom:10px;
+}
+
+
+/* five day forecast */
+.five-day-row-content,.five-day-details-content{
+    display: flex;
+    height: auto;
+}
+.five-day-row-content{
+    justify-content: center;
+}
+.day-0,.day-1,.day-2,.day-3,.day-4,.day-5{
+    width: 450px;
+    min-width:300px;
+    margin:60px;
+    background-color: rgba(56, 56, 56, 0.5);
+    border-radius: 20px;
+}
+.five-day-row-date{
+    padding:15px;
+    border-bottom: 1px solid white;
+}
+.five-day-details{
+    padding:15px;
+    border-top:1px solid white;
+    border-bottom:1px solid white;
+}
+.five-day-content-right{
+    padding:15px;
+    border-left:1px solid white;
+    text-align: center;
+}
+.five-day-content-left{
+    padding:15px;
+    text-align: center;
+    position: relative;
+    right:20px;
+}
+.five-day-content{
+    color:white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.five-day-min-max,.five-day-sunrise,.five-day-sunset{
+    padding:10px;
+    padding-left:50px;
+}
+.five-day-uv-index,.five-day-humidity{
+    padding:15px;
+    text-align: center;
+}
+.five-day-uv-index{
+    border-right:1px solid white;
+    width:163px;
+}
+.five-day-humidity{
+    width:213px;
+}
+
+
+/* historical forecast */
+.historical-content-display{
+    text-align:center;
+    color:white;
+    font-size:1.8rem;
+    position: relative;
+    top:80px;
+}
+.historical-current-location{
+    display:inline-block;
+    padding:20px
+}
+.historical-current-location-button{
+    color:black;
+    font-size:1rem;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 8px;
+    border-style:solid;
+    border-color: #2c111196;
+    margin:0;
+    background-color: white;
+    position: relative;
+    bottom:4px;
+}
+.historical-search-location{
+    display:inline-block;
+}
+.historical-search-location-button,.search-location{
+    color:black;
+    font-size:1rem;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 8px;
+    border-style:solid;
+    border-color: #2c111196;
+    margin:0;
+    background-color: white;
+    position: relative;
+    bottom:4px;
+}
+.historical-row-content,.historical-details-content{
+    display: flex;
+    height: auto;
+}
+.historical-row-content{
+    justify-content: center;
+}
+.historical-day-0,.historical-day-1,.historical-day-2,.historical-day-3,.historical-day-4,.historical-day-5{
+    width: 450px;
+    min-width:300px;
+    margin:60px;
+    background-color: rgba(56, 56, 56, 0.5);
+    border-radius: 20px;
+}
+.historical-row-date{
+    padding:15px;
+    border-bottom: 1px solid white;
+}
+.historical-details{
+    padding:15px;
+    border-top:1px solid white;
+    border-bottom:1px solid white;
+}
+.historical-content-right{
+    padding:15px;
+    border-left:1px solid white;
+    text-align: center;
+}
+.historical-content-left{
+    padding:15px;
+    text-align: center;
+    position: relative;
+    right:40px;
+}
+.historical-content{
+    color:white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.historical-min-max,.historical-sunrise,.historical-sunset{
+    padding:10px;
+    padding-left:50px;
+}
+.historical-uv-index,.historical-humidity{
+    padding:15px;
+    text-align: center;
+}
+.historical-uv-index{
+    border-right:1px solid white;
+    width:163px;
+}
+.historical-humidity{
+    width:213px;
+}
