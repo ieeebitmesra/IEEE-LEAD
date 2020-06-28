@@ -1,0 +1,124 @@
+
+body{
+    font-family: 'Times New Roman Georgia';
+}
+
+
+.home-body{
+    background-color:yellow;
+    width: 100%;
+    height: 100%;
+    color: black;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: 1.25rem;
+}
+$('.popover-dismiss').popover({
+  trigger: 'focus'
+})
+.skills ul{
+    
+    list-style: none;
+    padding-left:0;
+    font-weight: 500;
+    line-height: 1.5;
+
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,1);
+}
+.bg-dark {
+    background-color: rgba(52,58,64,0.8);
+}
+.intro{
+    width: 100%;
+    height: 100vh;
+    margin-bottom:50px;
+}
+
+
+.intro_pic{
+    width: 100%;
+    height:100vh;
+}
+.intro_text{
+    position: absolute;
+    top:40%;
+    left:5%;
+    color: beige;
+}
+.about{
+    background-color: red;
+    padding:40px 30px 0 30px;
+    text-align: center;
+    margin-bottom:50px;
+    font-size: 1.4rem;
+}
+
+.content{
+    padding:10px 20px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+.icon{
+    margin-bottom: 10px;
+}
+.skills{
+ background-color: white;
+    padding:40px 30px 0 30px;
+    justify-content: center;
+    text-align:center;
+    margin-bottom:50px;
+}
+
+
+
+.projects{
+    background-color: red;
+    text-align:left;
+    padding:40px 30px 0 30px;
+    justify-content: space-around;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom:50px;
+}
+
+
+
+.shows{
+  
+        padding:40px 30px 0 30px;
+        justify-content: center;
+        text-align:center;
+        margin-bottom:50px;
+}
+
+.shows img{
+    border-radius: 5px;
+    margin:30px;
+    cursor: pointer;
+}
+.shows img:hover{
+    box-shadow: -2px 2px 5px 5px rgb(99, 96, 96);
+}
+.dumb{
+text-align: right;
+}
+footer{
+background-color: yellow;
+}
+
+footer{
+    display:block;
+    padding:50px 20px 100px 30px;
+}
+.foot{
+    margin-bottom: 5%;
+}
+
+.footer-image{
+    border-radius: 50px;
+}
+
+
+
