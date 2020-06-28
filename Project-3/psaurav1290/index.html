@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta
+        name="viewport"
+        content="width = device-width, initial-scale = 1">
+    <title>WeatherApp</title>
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="lib/Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/body.css">
+    <style></style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">
+            <img
+                src="img/WeatherApp-Logo.svg"
+                class="navbar-brand-logo d-inline-block align-top"
+                alt="">
+            <span class="navbar-brand-text">eatherApp</span>
+        </a>
+        <form class="form-inline" onsubmit="getWeatherInfo()">
+            <input id="place-textfield" class="form-control mr-sm-2" type="search" placeholder="Search for a place" aria-label="Search">
+            <button class="btn btn-outline-success" type="button" onclick="getWeatherInfo()">
+                Search
+            </button>
+        </form>
+    </nav>
+    <div class="background-blur"></div>
+    <div id="scroll-container">
+        <div id="now-weather-container" class="container rowflex">
+            <div class="now-card col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-12 col-sm-12">
+                <div class="display-card">
+                    <div class="display-image">
+                        <div class="display-image-date"></div>
+                        <div class="display-image-place"></div>
+                    </div>
+                    <div class="display-info">
+                        <div class="infoblock infoblock-weather">
+                            <div class="weather-cell cell">Cloudy</div>
+                            <div class="description-cell cell">Partially Cloudy</div>
+                        </div>
+                        <div class="infoblock infoblock-temperature">
+                            <div class="infoblock-temperature-cell cell">
+                                <div class="temperature-cell cell-val">30</div>
+                                <div class="temperature-cell-unit cell-unit">॰C</div>
+                            </div>
+                        </div>
+                        <div class="infoblock infoblock-details">
+                            <div class="infoblock-humidity-cell cell">
+                                <div class="humidity-cell-cap cell-cap">Humidity</div>
+                                <div class="humidity-cell cell-val">76</div>
+                                <div class="humidity-cell-unit cell-unit">%</div>
+                            </div>
+                            <div class="infoblock-wind-cell cell">
+                                <div class="wind-cell-cap cell-cap">Wind Speed</div>
+                                <div class="wind-cell cell-val">2.1</div>
+                                <div class="wind-cell-unit cell-unit">kmph</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="batch-weather-container" class="container colflex">
+            <div class="batch-cells batch-cells-forecast col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="batch-cells-cap">Forecast</div>
+                <div class="rowflex">
+                    <div class="batch-cell" data-index="1">
+                        <div class="week-day">Sun</div>
+                        <div class="week-image"> </div>
+                    </div>
+                    <div class="batch-cell" data-index="2">
+                        <div class="week-day">Mon</div>
+                        <div class="week-image"> </div>
+                    </div>
+                    <div class="batch-cell" data-index="3">
+                        <div class="week-day">Tue</div>
+                        <div class="week-image"> </div>
+                    </div>
+                    <div class="batch-cell" data-index="4">
+                        <div class="week-day">Wed</div>
+                        <div class="week-image"></div>
+                    </div>
+                    <div class="batch-cell" data-index="5">
+                        <div class="week-day">Thu</div>
+                        <div class="week-image"> </div>
+                    </div>
+                </div>
+
+                <!-- The expanding image container -->
+                <div class="batch-card forecast-card col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-12 col-sm-12">
+                    <span class="close-icon" onclick="this.parentElement.style.display='none';setupAnimation()" class="closebtn">&times;</span>
+                    <div class="display-card">
+                        <div class="display-image">
+                            <div class="display-image-date"></div>
+                            <div class="display-image-place"></div>
+                        </div>
+                        <div class="display-info">
+                            <div class="infoblock infoblock-weather">
+                                <div class="weather-cell cell">Cloudy</div>
+                                <div class="description-cell cell">Partially Cloudy</div>
+                            </div>
+                            <div class="infoblock infoblock-temperature">
+                                <div class="infoblock-temperature-cell cell">
+                                    <div class="temperature-cell cell-val">30</div>
+                                    <div class="temperature-cell-unit cell-unit">॰C</div>
+                                </div>
+                            </div>
+                            <div class="infoblock infoblock-details">
+                                <div class="infoblock-humidity-cell cell">
+                                    <div class="humidity-cell-cap cell-cap">Humidity</div>
+                                    <div class="humidity-cell cell-val">76</div>
+                                    <div class="humidity-cell-unit cell-unit">%</div>
+                                </div>
+                                <div class="infoblock-wind-cell cell">
+                                    <div class="wind-cell-cap cell-cap">Wind Speed</div>
+                                    <div class="wind-cell cell-val">2.1</div>
+                                    <div class="wind-cell-unit cell-unit">kmph</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="batch-cells batch-cells-past col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="batch-cells-cap">History</div>
+                <div class="rowflex">
+                    <div class="batch-cell" data-index="-5">
+                        <div class="week-day">Sun</div>
+                        <div class="week-image"> </div>
+                    </div>
+                    <div class="batch-cell" data-index="-4">
+                        <div class="week-day">Mon</div>
+                        <div class="week-image"> </div>
+                    </div>
+                    <div class="batch-cell" data-index="-3">
+                        <div class="week-day">Tue</div>
+                        <div class="week-image"> </div>
+                    </div>
+                    <div class="batch-cell" data-index="-2">
+                        <div class="week-day">Wed</div>
+                        <div class="week-image"></div>
+                    </div>
+                    <div class="batch-cell" data-index="-1">
+                        <div class="week-day">Thu</div>
+                        <div class="week-image"> </div>
+                    </div>
+                </div>
+
+                <!-- The expanding image container -->
+                <div class="batch-card past-card col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-12 col-sm-12">
+                    <span class="close-icon" onclick="this.parentElement.style.display='none';setupAnimation()" class="closebtn">&times;</span>
+                    <div class="display-card">
+                        <div class="display-image">
+                            <div class="display-image-date"></div>
+                            <div class="display-image-place"></div>
+                        </div>
+                        <div class="display-info">
+                            <div class="infoblock infoblock-weather">
+                                <div class="weather-cell cell">Cloudy</div>
+                                <div class="description-cell cell">Partially Cloudy</div>
+                            </div>
+                            <div class="infoblock infoblock-temperature">
+                                <div class="infoblock-temperature-cell cell">
+                                    <div class="temperature-cell cell-val">30</div>
+                                    <div class="temperature-cell-unit cell-unit">॰C</div>
+                                </div>
+                            </div>
+                            <div class="infoblock infoblock-details">
+                                <div class="infoblock-humidity-cell cell">
+                                    <div class="humidity-cell-cap cell-cap">Humidity</div>
+                                    <div class="humidity-cell cell-val">76</div>
+                                    <div class="humidity-cell-unit cell-unit">%</div>
+                                </div>
+                                <div class="infoblock-wind-cell cell">
+                                    <div class="wind-cell-cap cell-cap">Wind Speed</div>
+                                    <div class="wind-cell cell-val">2.1</div>
+                                    <div class="wind-cell-unit cell-unit">kmph</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <!--script>
+        var lastScrollTop = 0
+        // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+        element.addEventListener(
+            "scroll",
+            function () {
+                // or window.addEventListener("scroll"....
+                var st =
+                    window.pageYOffset || document.documentElement
+                    .scrollTop // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+                if (st > lastScrollTop) {
+                    // downscroll code
+                } else {
+                    // upscroll code
+                }
+                lastScrollTop = st <= 0 ? 0 : st // For Mobile or negative scrolling
+            },
+            false
+        )
+
+        var headerHeight = document.querySelector("nav").offsetHeight;
+    </script-->
+</body>
+
+</html>

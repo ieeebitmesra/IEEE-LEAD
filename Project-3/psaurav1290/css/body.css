@@ -1,0 +1,167 @@
+:root {
+    --background: rgb(0, 102, 185);
+}
+
+body {}
+
+.background-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    z-index: -10;
+}
+
+#scroll-container {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 10%;
+    justify-items: end; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.fake-scroll {
+    position: absolute;
+    top: 0;
+    width: 1px;
+}
+
+.rowflex {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.display-card {
+    margin: 10px 0;
+    background-color: var(--background);
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.548);
+}
+
+.close-icon {
+    position: absolute;
+    left: 20px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.548);
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.close-icon:hover {
+    transform: scale(2) rotate(180deg);
+}
+
+.display-image {
+    height: 50vh;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-image: url("../img/WeatherAppThumb.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.display-info {
+    display: flex;
+}
+
+@media (max-width:576px) {
+    .display-info {
+        flex-direction: column;
+    }
+}
+
+.infoblock {
+    display: flex;
+    flex-direction: column;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+@media (max-width:576px) {
+    .infoblock {
+        flex-direction: row;
+    }
+}
+
+.cell {
+    flex: 1;
+    -ms-flex: 1;
+    text-align: center;
+    margin: 5px;
+    border-radius: 5px;
+    /* border: medium solid rgba(255, 255, 255, 0.651); */
+    box-shadow: 2px 2px 2px 0px rgba(255, 255, 255, 0.2) inset;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cell-val,
+.cell-unit {
+    display: inline-block;
+}
+
+.description-cell {
+    font-style: italic;
+}
+
+.temperature-cell {
+    font-size: 80px;
+}
+
+.colflex {
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+}
+
+.batch-cells {
+    background-color: var(--background);
+    border-radius: 30px;
+    margin: 30px 0;
+    color: #9ff4ff;
+}
+
+.batch-cells-cap {
+    text-align: center;
+    border-radius: 30px;
+    background-color: rgba(0, 42, 104, 0.849);
+    margin-top: 5px;
+    height: 50px;
+    line-height: 50px;
+    box-shadow: 4px 5px 5px 0px rgba(255, 255, 255, 0.479) inset;
+}
+
+
+.batch-cell {
+    -ms-flex: 1;
+    flex: 1;
+    cursor: pointer;
+}
+
+.week-day {
+    text-align: center;
+}
+
+.week-image {
+    background-image: url("../img/WeatherAppThumb.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 15vw;
+}
+
+.batch-card {
+    display: none;
+}
