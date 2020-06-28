@@ -59,4 +59,4 @@ i will make the design of the website responsive,and design the websites more be
 
 ### What I have learned
 
-I have learnt to fetch api read jason through it join java to the html page.
+I have learnt to fetch api read json through it join java to the html page.
