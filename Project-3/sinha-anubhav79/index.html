@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./resources/icons/WebsiteIcon.ico">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather</title>
+</head>
+<body>
+    <div class="container">
+
+        <!--MAIN HEADER STARTS-->
+        <div class="grid_item" id="main_header">
+            <div class="head_item" id="logo">
+                <img src="./resources/icons/logo.png" alt="Head logo">
+            </div>
+            <div class="head_item" id="date">
+                <strong>Tuesday</strong>, June 23
+            </div>
+        </div>
+        <!--MAIN HEADER ENDS-->
+
+        <!--SEARCH BAR STARTS-->
+        <div class="grid_item" id="search_bar">
+            <input type="search" id="location" placeholder="Location ex. Delhi">
+            <button class="search_button"><img src="./resources/icons/search-icon.png" alt=""></button>
+        </div>
+        <!--SEARCH BAR ENDS-->
+
+
+        <div class="grid-item" id="loader">
+            <div class="circle-loader"></div>
+        </div>
+
+
+        <!--RESULTS STARTS-->
+        <div class="grid_item" id="result">
+            <div class="results">
+                <button id="leftslide"> &lt; </button>
+                <div class="box">
+                    <p class="weather_date"></p>
+                    <h1 class="temp_head"><span class="temp"></span> &degC</h1>
+                    <p class="desc"></p>
+                    <p><strong>Humidity: </strong><br> <span class="humidity"></span></span></p>
+                    <p><strong>Wind: </strong><br> <span class="wind"></span></p>
+                    <p><strong>Lat: </strong><br> <span class="lat"></span></p>
+                    <p><strong>Lon: </strong><br> <span class="long"></span></p>
+                </div>
+                <button id="rightslide"> &gt; </button>
+            </div>
+        </div>
+        <!--RESULTS ENDS-->
+
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
