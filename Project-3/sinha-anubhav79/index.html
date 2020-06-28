@@ -8,8 +8,8 @@
     <title>Weather</title>
 </head>
 <body>
-    <div class="circle-back"></div>
     <div class="container">
+
         <!--MAIN HEADER STARTS-->
         <div class="grid_item" id="main_header">
             <div class="head_item" id="logo">
@@ -20,12 +20,20 @@
             </div>
         </div>
         <!--MAIN HEADER ENDS-->
+
         <!--SEARCH BAR STARTS-->
         <div class="grid_item" id="search_bar">
             <input type="search" id="location" placeholder="Location ex. Delhi">
             <button class="search_button"><img src="./resources/icons/search-icon.png" alt=""></button>
         </div>
         <!--SEARCH BAR ENDS-->
+
+
+        <div class="grid-item" id="loader">
+            <div class="circle-loader"></div>
+        </div>
+
+
         <!--RESULTS STARTS-->
         <div class="grid_item" id="result">
             <div class="results">
@@ -43,7 +51,9 @@
             </div>
         </div>
         <!--RESULTS ENDS-->
+
     </div>
+
     <script type="module" src="main.js"></script>
 </body>
 </html>

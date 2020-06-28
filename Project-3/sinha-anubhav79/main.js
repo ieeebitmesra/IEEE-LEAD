@@ -1,4 +1,6 @@
 /*------------From the HTML--------------------------------*/
+let result = document.getElementById("result")
+let display_results = document.querySelector('.results')
 let location = document.querySelector('#location')
 let button = document.querySelector('.search_button')
 let description = document.querySelector('.desc')
@@ -31,6 +33,9 @@ const weatherImage = {
     mist:1,
 }
 
+
+setHeaderDate();
+getLocation();
 button.addEventListener('click', getWeather);
 
 /*-----------------------------Function to set background image--------------------------------------------*/
@@ -44,6 +49,7 @@ function setBackImage(img_name){
 /*-----------------------------Function to set background image--------------------------------------------*/
 
 /*-----------------------------Function fetching weather data---------------------------------------------*/
+//current weather and forecast data
 function getCurrentWeather(count){
     fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat_value+"&lon="+lon_value+"&units=metric&exclude=hourly,currently&appid="+apiID)
     .then(resp1 => resp1.json())
@@ -65,6 +71,7 @@ function getCurrentWeather(count){
     })
 }
 
+//past weather data
 function getPastWeather(){
     fetch("https://api.openweathermap.org/data/2.5/onecall/timemachine?lat="+lat_value+"&lon="+lon_value+"&units=metric&dt="+var_dt+"&appid="+apiID)
     .then(resp2 => resp2.json())
@@ -86,8 +93,10 @@ function getPastWeather(){
     })
 }
 /*-----------------------------Function fetching weather data----------------------------------------------*/
+
 /*-----------------------------Next and previous Buttons----------------------------------------------*/
 rightslide.addEventListener('click',() => {
+    if(count<7){
         count+=1;
         var_date.setDate(var_date.getDate()+1)
         var_dt = Math.round((var_date.getTime())/1000)
@@ -95,8 +104,10 @@ rightslide.addEventListener('click',() => {
             getCurrentWeather(count);
         else if(count>-6 && count<0)
             getPastWeather()
+    }
 })
 leftslide.addEventListener('click',() => {
+    if(count>-5){
         count-=1;
         var_date.setDate(var_date.getDate()-1)
         var_dt = Math.round((var_date.getTime())/1000)
@@ -104,11 +115,20 @@ leftslide.addEventListener('click',() => {
             getCurrentWeather(count);
         else if(count>-6 && count<0)
             getPastWeather()
+    }    
 })
 /*-----------------------------Next and previous Buttons----------------------------------------------*/
 
 /*-----------------------------Search function----------------------------------------------*/
 function getWeather(){
+    setTimeout(() => display_results.style.opacity = "0", 200);
+    result.style.display = "none";
+    loader.style.display = "flex";
+    setTimeout(() => loader.style.opacity = "1", 200);
+
+    var_date = new Date();
+    count = 0;
+
     fetch('https://api.openweathermap.org/data/2.5/weather?q='+location.value+'&appid='+apiID)
     .then(response => response.json())
     .then(data => {
@@ -121,13 +141,48 @@ function getWeather(){
         latitude.innerHTML = Math.abs(lat_value)+dir_lat;
         longitude.innerHTML = Math.abs(lon_value)+dir_lon;
         
-        getCurrentWeather(0)
-    })
-    
-    document.getElementById("result").style.display = "block";
+        getCurrentWeather(count)
+
+        setTimeout(() => loader.style.opacity = "0", 200);
+            loader.style.display = "none";
+            result.style.display = "block";
+            setTimeout(() => display_results.style.opacity = "1", 200);
+    }).catch(() => alert("Please check location entered and try again"))
 }
 /*-----------------------------Search function----------------------------------------------*/
-/*--------------------------------Function to get current date----------------------------------------------------------------------------------*/
+
+/*----------------------------Function to get current location------------------------------*/
+function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
+  
+  function showPosition(position) {
+    lat_value = position.coords.latitude;
+    lon_value = position.coords.longitude
+    //console.log("Latitude: " + lat_value + "Longitude: " + lon_value);
+
+    setTimeout(() => display_results.style.opacity = "0", 200);
+    result.style.display = "none";
+    loader.style.display = "flex";
+    setTimeout(() => loader.style.opacity = "1", 200);
+
+    var_date = new Date();
+    count = 0;
+
+    getCurrentWeather(count)
+
+    setTimeout(() => loader.style.opacity = "0", 200);
+        loader.style.display = "none";
+        result.style.display = "block";
+        setTimeout(() => display_results.style.opacity = "1", 200);
+  }
+/*----------------------------Function to get current location------------------------------*/
+
+/*--------------------------------------------------Function to get current date---------------------------------------------------------------*/
 function set_Date(display_date) {
     
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -141,12 +196,13 @@ function set_Day(){
     let day = weekday[today.getDay()];
     return day;
 }
-/*--------------------------------Function to set current date----------------------------------------------------------------------------------*/
+/*--------------------------------------------------Function to get current date---------------------------------------------------------------*/
+
+/*--------------------------------------------------Function to set current date---------------------------------------------------------------*/
 
 function setHeaderDate(){
     var current_date = document.getElementById('date');
     const today = new Date();
     current_date.innerHTML = "<strong>" + set_Day() + "</strong>, " + set_Date(today);
 }
-
-setHeaderDate();
+/*--------------------------------------------------Function to set current date---------------------------------------------------------------*/

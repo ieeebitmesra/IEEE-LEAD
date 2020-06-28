@@ -58,6 +58,46 @@ button img{
     border-radius: 100%;
 }
 /*----------SEARCH BAR------------------*/
+
+/*----------LOADING ANIMATION-----------*/
+#loader{
+    position: relative;
+    top: 100px;
+    display: none;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s;
+    animation: change-background 6s linear infinite;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 5em;
+}
+
+.circle-loader {
+    border: 12px white;
+    border-radius: 50%;
+    padding: 80px;
+    border-left-style: dotted;
+    border-right-style: dotted;    
+    transition: all 1s linear;
+    animation: rotate-loader 3s linear infinite;
+}
+
+@keyframes change-background {
+    0% {    background-image: url("resources/icons/sun.png");    }
+    25% {    background-image: url("resources/icons/rain.png");    }
+    50% {    background-image: url("resources/icons/cloud.png");    }
+    75% {    background-image: url("resources/icons/thunder.png");    }
+    100% {    background-image: url("resources/icons/sun.png");    }
+}
+
+@keyframes rotate-loader {
+    0% {    transform: rotateZ(0);    }
+    100% {  transform: rotateZ(360deg);    }
+}
+/*----------LOADING ANIMATION-----------*/
+
 /*----------RESULTS------------------*/
 .results{
     display: flex;
@@ -105,6 +145,4 @@ button img{
 }
 
 #result{    display: none;  }
-
-.show{  display: block; }
 /*----------RESULTS------------------*/
