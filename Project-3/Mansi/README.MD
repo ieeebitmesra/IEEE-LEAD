@@ -7,6 +7,7 @@
 ### Group no::2
 
 # html file in the beginning give the link for all the webpages.
+
 - [link](https://mansikanoi.github.io/WEATHER_APP/)
 
 ### Milstones Achieved
@@ -78,14 +79,14 @@
 
 - It is a simple website wherein:
 
-  1.  final_weather_host has an html file which on running returns the weather details for today.
-  2.  previous_weather_host has an html file which running returns the weather details for last 5 days .
-  3.  after_weather_host has an html file which on running returns the weather details for the next 5 days .
-  4.  My_Weather_Location has an html file which on running returns the weather details for current loction.
-  5.  Previous_Weather_Location has an html file which on running returns the weather details for the last 5 days for the
-      current loction.
-  6.  After_Weather_Location has an html file which on running returns the weather details for the coming 5 days for the
-      current loction.
+1.  final_weather_host has an html file which on running returns the weather details for today.
+2.  previous_weather_host has an html file which running returns the weather details for last 5 days .
+3.  after_weather_host has an html file which on running returns the weather details for the next 5 days .
+4.  My_Weather_Location has an html file which on running returns the weather details for current loction.
+5.  Previous_Weather_Location has an html file which on running returns the weather details for the last 5 days for the
+    current loction.
+6.  After_Weather_Location has an html file which on running returns the weather details for the coming 5 days for the
+    current loction.
 
 ### Scope of imporovement
 
