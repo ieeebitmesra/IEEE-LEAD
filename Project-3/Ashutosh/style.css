@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: white;
+  background-image: url("./images/BNc2M4.jpg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  background-attachment: fixed;
+}
+.nav {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(44, 83, 131, 1) 18.9%,
+    rgba(95, 175, 201, 1) 91.1%
+  );
+  z-index: 100000;
+}
+.nav .logo {
+  margin: 3px;
+}
+.nav img {
+  height: 3em;
+  border-radius: 5px;
+}
+.nav .date {
+  width: 100%;
+}
+.nav h1 {
+  text-align: center;
+  font-weight: normal;
+  font-family: "Lato", sans-serif;
+}
+.main {
+  margin-top: 60px;
+}
+.main .searchbar {
+  margin-top: 150px;
+  text-align: center;
+}
+#location {
+  position: relative;
+  width: 340px;
+  height: 50px;
+  border: none;
+  outline: none;
+  padding: 0 25px;
+  border-radius: 25px 0 0 25px;
+  color: chocolate;
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
+  font-weight: bolder;
+  text-align: center;
+}
+#btn {
+  position: relative;
+  top: -1px;
+  left: -5px;
+  height: 50px;
+  width: 150px;
+  border-radius: 0 25px 25px 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: green;
+  color: white;
+  font-size: 20px;
+}
+
+#btn:hover {
+  background: #ff5722;
+}
+.loader {
+  position: relative;
+  display: none;
+  width: 100%;
+  height: 100%;
+  transition: all 1s ease-out;
+}
+
+.loader span:nth-child(1) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border: 6px solid #adff2f;
+  border-radius: 50%;
+  border-bottom: 6px solid transparent;
+  animation: animate 1s linear infinite;
+}
+.loader span:nth-child(2) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 140px;
+  border: 6px solid #adff2f;
+  border-radius: 50%;
+  border-top: 6px solid transparent;
+  animation: animate 1s linear infinite;
+}
+.loader span:nth-child(3) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border: 6px solid #adff2f;
+  border-radius: 50%;
+  border-right: 6px solid transparent;
+  animation: animate 1s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.flexy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel-container {
+  width: 320px;
+  height: 400px;
+  overflow: hidden;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  position: relative;
+}
+.carousel-slide {
+  width: 100%;
+  height: 100%;
+  display: none;
+  transition: all 1s ease-in;
+}
+.carousel-slide > div {
+  display: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.carousel-slide > div h1 {
+  font-weight: 800;
+  font-size: 40px;
+}
+.carousel-slide > div .temp-weather h2 {
+  font-size: 45px;
+}
+.carousel-slide > div .temp-weather h3 {
+  font-size: 30px;
+  font-weight: 500;
+}
+.carousel-slide .other-info p {
+  font-size: 20px;
+}
+
+.carousel-slide .weather-info {
+  display: none;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: url("./images/7kup_4epw_180314.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 1px 2px 10px 2px grey, -1px 2px 5px 2px grey;
+  text-align: center;
+}
+.carousel-slide .weather-info .other-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+#forward {
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin-left: 20px;
+  display: none;
+}
+#backward {
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin-right: 20px;
+  display: none;
+}
+.fas {
+  color: white;
+  font-size: 80px;
+}
