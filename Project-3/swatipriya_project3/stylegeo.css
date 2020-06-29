@@ -1,0 +1,111 @@
+* {
+    font-family: 'monospace';
+}
+
+.geo {
+    background: linear-gradient(rgb(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(profile.jpg);
+    background-position: center;
+    background-size: cover;
+    margin: 0px 0px 0px 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.containers {
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: block;
+    margin: 0 auto;
+    border-radius: 14px;
+    padding-bottom: 20px;
+}
+
+.app-title {
+    width: 300px;
+    height: 50px;
+    border-radius: 10px 10px 0 0;
+}
+
+.app-title p {
+    text-align: center;
+    padding: 15px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    color: #293251;
+}
+
+.notification {
+    background-color: #f8d7da;
+    display: none;
+}
+
+.notification p {
+    color: #721c24;
+    font-size: 1.2em;
+    margin: 0;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.weather-containers {
+    width: 300px;
+    height: 290px;
+    background-color: rgba(250, 250, 250, 0.6);
+    display: block;
+    padding: 30px 30px;
+}
+
+.weather-icon {
+    width: 300px;
+    height: 128px;
+}
+
+.weather-icon img {
+    display: block;
+    margin: auto;
+}
+
+.temperature-value {
+    width: 300px;
+    height: 60px;
+}
+
+.temperature-value p {
+    padding: 0;
+    margin: 5px 50px;
+    color: #293251;
+    font-size: 3em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.temperature-value p:hover {
+    transform: scale(1.2)
+}
+
+.temperature-value span {
+    color: #293251;
+    font-size: 0.5em;
+}
+
+.temperature-description {
+    color: rgb(47, 47, 59);
+}
+
+.temperature-description p {
+    padding: 3px;
+    margin: 0;
+    color: #293251;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+.location {}
+
+.location p {
+    margin: 0;
+    padding: 0;
+    color: #293251;
+    text-align: center;
+    font-size: 1em;
+}

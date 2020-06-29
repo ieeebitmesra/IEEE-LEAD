@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylegeo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script data-require="moment.js@2.10.2" data-semver="2.10.2" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+</head>
+
+<body>
+    <div class="geo">
+        <div class="containers">
+            <div class="app-title">
+                <p>Weather</p>
+            </div>
+            <div class="notification"> </div>
+            <div class="weather-containers">
+                <div class="weather-icon">
+                    <img src="icons/unknown.png" alt="">
+                </div>
+                <div class="temperature-value">
+                    <p>- °<span>C</span></p>
+                </div>
+                <div class="temperature-description">
+                    <p> - </p>
+                </div>
+                <div class="location">
+                    <p>-</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="appgeo.js"></script>
+    <div class="first">
+        <div class="main">
+
+
+            <div class="input">
+                <input type="text" placeholder="Enter the city name!!!" class="input_text">
+                <input type="submit" value="Submit" class="submit">
+            </div>
+        </div>
+
+        <div class="containers">
+
+            <div class="app-title">
+                <p>
+                    <U>Weather</U> </p>
+            </div>
+            <div class="card">
+                <p class="name" id="name"></p>
+                <p class="country"></p>
+                <p class="temp"></p>
+                <p class="clouds"></p>
+                <p class="hum"></p>
+                <p class="tempmin"></p>
+                <p class="tempmax"></p>
+                <p id="lat"></p>
+                <p id="lon"></p>
+                <p class="desc"></p>
+                <p class="main_Desc"></p>
+
+
+            </div>
+
+        </div>
+
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <p class=date1></p>
+                    <p class="tempmin1"></p>
+                    <p class="tempmax1"></p>
+                    <p class="hum1"></p>
+                    <p class="pre1"></p>
+                    <p class="desc1"></p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <p class=date2></p>
+                    <p class="tempmin2"></p>
+                    <p class="tempmax2"></p>
+                    <p class="hum2"></p>
+                    <p class="pre2"></p>
+                    <p class="desc2"></p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <p class=date3></p>
+                    <p class="tempmin3"></p>
+                    <p class="tempmax3"></p>
+                    <p class="hum3"></p>
+                    <p class="pre3"></p>
+                    <p class="desc3"></p>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <p class=date4></p>
+                    <p class="tempmin4"></p>
+                    <p class="tempmax4"></p>
+                    <p class="hum4"></p>
+                    <p class="pre4"></p>
+                    <p class="desc4"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 text-center">
+
+                    <p class=date5></p>
+                    <p class="tempmin5"></p>
+                    <p class="tempmax5"></p>
+                    <p class="hum5"></p>
+                    <p class="pre5"></p>
+                    <p class="desc5"></p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <p class=date6></p>
+                    <p class="tempmin6"></p>
+                    <p class="tempmax6"></p>
+                    <p class="hum6"></p>
+                    <p class="pre6"></p>
+                    <p class="desc6"></p>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <p class=date7></p>
+                    <p class="tempmin7"></p>
+                    <p class="tempmax7"></p>
+                    <p class="hum7"></p>
+                    <p class="pre7"></p>
+                    <p class="desc7"></p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <p class=date8></p>
+                    <p class="tempmin8"></p>
+                    <p class="tempmax8"></p>
+                    <p class="hum8"></p>
+                    <p class="pre8"></p>
+                    <p class="desc8"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md text-center">
+            <h4 class="auto-input"></h4>
+            <script src="typed.js"></script>
+            <script>
+                var typed = new Typed(".auto-input", {
+                    strings: ["Search For Past Weather Data (!Previous 5 Days!)"],
+                    typeSpeed: 110,
+                    backspeed: 90,
+                    loop: true
+                });
+            </script>
+            <div class="past">
+                <div class="input1">
+                    <input type="text" placeholder="YYYY-MM-DD" class="input_text1">
+                    <input type="submit" value="Search" class="submit1">
+
+                    <p class="humS"></p>
+                    <p class="preS"></p>
+                    <p class="tempS"></p>
+                    <p class="descS"></p>
+                </div>
+            </div>
+
+        </div>
+        <script src="app.js"></script>
+
+
+
+</body>
+
+
+</html>
