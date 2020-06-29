@@ -51,7 +51,9 @@ I learned how to make API calls, use the language - Javascript and use the basic
 **LINK FOR THIS PROJECT -** https://anshul275.github.io/Weather-App/
 
 **SCREENSHOTS** 
-<img src="Outputs/Location.png" width="800">
-<img src="Outputs/Yesterday.png" width="800">
-<img src="Outputs/Today.png" width="800">
-<img src="Outputs/Tomorrow.png" width="800">
+
+
+<img src="Outputs/Location.png" width="700">
+<img src="Outputs/Yesterday.png" width="700">
+<img src="Outputs/Today.png" width="700">
+<img src="Outputs/Tomorrow.png" width="700">
