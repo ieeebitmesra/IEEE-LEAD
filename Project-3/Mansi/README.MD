@@ -79,6 +79,8 @@
 
 - It is a simple website wherein:
 
+## THE link above has links for all these
+
 1.  final_weather_host has an html file which on running returns the weather details for today.
 2.  previous_weather_host has an html file which running returns the weather details for last 5 days .
 3.  after_weather_host has an html file which on running returns the weather details for the next 5 days .
