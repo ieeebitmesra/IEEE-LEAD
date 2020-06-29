@@ -1,7 +1,6 @@
+**LINK FOR THIS PROJECT -** https://blastoise.github.io/Weather-App/
+
 # Weather App
-
-
-
 
 **NAME** - Ashutosh Kumar
 
@@ -51,3 +50,11 @@ Ajusting the layout of the page and making time zones of all country available.
 **WHAT YOU LEARNED**
 
 I learned how to make API calls, using the language - Javascript and using the basics of HTML and CSS.
+
+
+**WEBSITE PREVIEW:**
+
+
+<img src="images/website_preview.png" width="700">
+
+
