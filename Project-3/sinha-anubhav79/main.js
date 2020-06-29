@@ -172,6 +172,12 @@ function getLocation() {
 
     var_date = new Date();
     count = 0;
+    
+    let dir_lat = ' N', dir_lon = ' E'
+    if (lat_value<0)  dir_lat = ' S' 
+    if (lon_value<0)  dir_lon = ' W'
+    latitude.innerHTML = Math.abs(lat_value.toFixed(2))+dir_lat;
+    longitude.innerHTML = Math.abs(lon_value.toFixed(2))+dir_lon;
 
     getCurrentWeather(count)
 
