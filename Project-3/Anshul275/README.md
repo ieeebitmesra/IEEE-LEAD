@@ -47,3 +47,11 @@ The page is not pretty and interactive.
 **WHAT YOU LEARNED**
 
 I learned how to make API calls, use the language - Javascript and use the basics of HTML and CSS.
+
+**LINK FOR THIS PROJECT -** https://anshul275.github.io/Weather-App/
+
+**SCREENSHOTS** 
+<img src="Outputs/Location.png" width="800">
+<img src="Outputs/Yesterday.png" width="800">
+<img src="Outputs/Today.png" width="800">
+<img src="Outputs/Tomorrow.png" width="800">
