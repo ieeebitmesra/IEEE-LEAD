@@ -1,0 +1,72 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("images/backk.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: bisque;
+  color: black;
+  text-shadow: 1px 1px 1px white;
+  font-family: "Nunito", "Merrieweather", "tamoha", "serrif";
+  transition: 3s;
+}
+
+.weathercontainer {
+  background-color: snow;
+  box-shadow: 5px, 5px, 10px, black;
+  padding: 50px;
+  border-radius: 10px;
+  position: absolute;
+  margin-left: 610px;
+  margin-top: 150px;
+}
+.weathercontainer {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px;
+  visibility: hidden;
+}
+
+.city {
+  margin: 5px;
+  font-size: 20px;
+}
+.weatherinfo {
+  margin: 5px;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px white;
+  font-family: "Nunito", "Merrieweather", "tamoha", "serrif";
+  font-weight: 600px;
+  color: black;
+}
+.bottom_details {
+  display: block;
+  color: black;
+  font-size: 25px;
+  text-shadow: 1px 1px 1px white;
+  font-family: "Nunito", "Merrieweather", "tamoha", "serrif";
+  text-align: right;
+  /* margin-right: 100px; */
+}
+.weatherinfo div {
+  display: inline-block;
+}
+.weatherinfo div .iconImg {
+  font-size: 10px;
+  vertical-align: 20px;
+}
+.temp {
+  font-size: 25px;
+  vertical-align: 60px;
+}
+.desc {
+  font-size: 25px;
+  vertical-align: 60px;
+  margin: 5px;
+}
