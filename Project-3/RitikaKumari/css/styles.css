@@ -1,0 +1,185 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background-image: url('../images/bg.jpg');
+    overflow: hidden;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: auto auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.searchInputBox{
+    text-align: center;
+    background-color: rgba(240, 248, 255, 0.6);
+    width: 180vh;
+    height: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+.searchInputBox>*{
+    margin-top: 50px;
+}
+.input-box {
+    width: 150vh;
+    background-color: rgba(255, 255, 255, 0.6);
+    border:none;
+    outline:none;
+    color:#582233;
+    font-size:1.2rem;
+    height:50px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+}
+.input-box:focus{
+    background-color:rgba(255, 255, 255);
+}
+.searchInputBox .button1{
+    height:45px;
+    width:100px;
+    border-radius: 5px;
+    color: #582233;
+    background-color:rgba(255, 255, 255, 0.6) ;
+    border-width: 0em;
+}
+.searchInputBox .button1:hover{
+    background-color:rgba(255, 255, 255,0.6);
+}
+.container1{
+    background-color:rgba(240, 248, 255, 0.6) ;
+    width: 120vh;
+    margin:50px auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+.weather-body{
+    color: #582233;
+    background-color:rgba(255, 255, 255, 0.6);
+    padding-left: 20px;
+    padding-top: 20px;
+    border-radius: 5px;
+    height: 45vh;
+}
+.a{
+    overflow: auto;
+}
+.place{
+    font-weight: bold;
+    font-size: 3rem;
+    float: left;
+    margin-top: -10px;
+}
+.all{
+    display: none;
+}
+.cont2{
+    display: none;
+    text-align: right;
+    float: right;
+    padding-right: 50px;
+    padding-top: 13px;
+}
+.cont2 li{
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.weather-body li{
+    display: inline-block;
+}
+.weather-body ul{
+    margin-top:-12px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.day{
+    margin-top:-15px;
+    font-size: 1.5rem;
+}
+.date{
+    font-size: 1.2rem;
+}
+.preci{
+    margin-top: 8px;
+}
+.b{
+    overflow: wrap;
+}
+.date{
+    float:left;
+}
+.temp{
+    float: right;
+    font-size: 5rem;
+    font-weight: bolder;
+    margin-right:100px ;
+    margin-top:-50px;
+    text-shadow: 2px 4px rgba(0,0,0,0.3);
+}
+.c{
+    overflow: wrap;
+}
+.e{
+    overflow: wrap;
+}
+.preci{
+    float: left;
+    margin-top: 80px;
+    position: fixed;
+}
+.weather{
+    float: right;
+    margin-top: 100px;
+    font-size: 2rem;
+    font-weight: 700;
+    position: fixed;
+    margin-left: 180px;
+}
+.wind{
+    float: left;
+    margin-top: 35px;
+    position: fixed;
+}
+.d{
+    float: right;
+    margin-left: 150px;
+    margin-top: -80px;
+    position: fixed;
+}
+.d img{
+    height: 200px;
+    width: 200px;
+}
+.mybt1{
+    float: left;
+    margin-top: -250px;
+    margin-left: 200px;
+}
+.mybt{
+    float: right;
+    margin-top: -250px;
+    margin-right: 200px;
+}
+.myBtn{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+.myBtn1{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+.mybt1 .fa-angle-double-left{
+    font-size: 5rem;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+.mybt .fa-angle-double-right{
+    font-size: 5rem;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
