@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+
+</head>
+
+<body>
+    <div class="location">
+        <h1> Location</h1><br>
+        <input type="text" name="place" id="place" placeholder='Enter the address...' size="60">
+        <button type="button" class="latlong" onclick="getll()">Get Latitude and Longitude</Button><br>
+        <label id="locate"></label><br>
+
+        <p>This is your position:</p>
+        <p> Latitude: <span id="lat"></span> &deg;<br> Longitude: <span id="lng"></span> &deg;<br></p>
+    </div>
+
+    <div class="container">
+        <div class="app-title">
+            <h1>WEATHER:</h1><br>
+            <span>Location:</span><input type="text" class="search-box" autocomplete="off" id="loc" placeholder='Enter the address...' size="60">
+            <button type="button" class="PreviousDay" onclick="previous()">Previous Day</Button>
+            <button type="button" class="Search" onclick="getResult()">Search</Button>
+            <button type="button" class="NextDay" onclick="next()">Next Day</Button>
+        </div><br><br><br><br><br><br>
+        <div class="weat-container">
+            <div class="weat-icon">
+                <img src="icons/unknown.png" alt="-"><br>
+            </div>
+            <div class="date"><br></div>
+            <div class="temperature-value"><br>
+                <p>-&deg;<span>C</span></p>
+                <div class="temperature-description">
+                    <p>-</p>
+                </div>
+                <div class="locati">
+                    <p>-</p><br>
+                </div>
+                <div class="mainn"></div>
+            </div>
+        </div>
+
+
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed in=true&libraries=places&key=AIzaSyAikOGBw3sNCCKTQK_MP11RtLx6uTQVur8">
+        </script>
+        <script src="js/script.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/try.js"></script>
+</body>
+
+</html>
