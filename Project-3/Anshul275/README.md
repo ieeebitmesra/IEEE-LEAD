@@ -14,6 +14,7 @@
     1. Longitude, Latitude of the Location
     2. Current Weather/Today's Weather
     3. Previous two day's weather & Forecast of tomorrow and day after tomorrow's weather
+    4. Optional Milestones :- Background changes as per the weather conditions
           
           
 **TECH STACK**

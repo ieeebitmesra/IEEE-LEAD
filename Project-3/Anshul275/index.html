@@ -2,60 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Current Weather</title>
+  <title>Weather Reports</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body bgcolor="lightblue">
-  <center>Input name of the location</center>
-  <center><input type="text" id="weather_location"></center>
-  <center><button id="weather_report_button" onclick="weather_report()">Find Location Coordinates and Weather Report</button></center>
-  <br><br><br>
-  <div>
-    <h1 id="location"></h1>
-    <div id="longitude"></div>
-    <div id="latitude"></div>
+  <div id="main">
+    <center>Input name of the location</center>
+    <center><input type="text" id="weather_location"></center>
+    <center><button id="weather_report_button" onclick="weather_report()">Find Location Coordinates and Weather Report</button></center>
+    <br><br><br>
+    <div>
+      <h1 id="location"></h1>
+      <div id="longitude"></div>
+      <div id="latitude"></div>
+    </div>
+    <br><br><br><br>
+    <div>
+      <h1 id="weather"></h1>
+      <div id="day_before_yesterday">
+        <br>
+        <h4 id="day1"></h4><br>
+        <div id="temp_feel1"></div><br>
+        <div id="weather_conditions1"></div><br>
+        <div id="wind_humid1"></div><br>
+        <br><br>
+      </div>
+      <div id="yesterday">
+        <br><br>
+        <h4 id="day2"></h4><br>
+        <div id="temp_feel2"></div><br>
+        <div id="weather_conditions2"></div><br>
+        <div id="wind_humid2"></div>
+        <br><br>
+      </div>
+      <div id="today">
+        <br><br>
+        <h4 id="day3"></h4><br>
+        <div id="temp_feel3"></div><br>
+        <div id="max_min_temp3"></div><br>
+        <div id="weather_conditions3"></div><br>
+        <div id="wind_humid3"></div>
+        <br><br>
+      </div>
+      <div id="tomorrow">
+        <br><br>
+        <h4 id="day4"></h4><br>
+        <div id="temp_feel4"></div><br>
+        <div id="max_min_temp4"></div><br>
+        <div id="weather_conditions4"></div><br>
+        <div id="wind_humid4"></div>
+        <br><br>
+      </div>
+      <div id="day_after_tomorrow">
+        <br><br>
+        <h4 id="day5"></h4><br>
+        <div id="temp_feel5"></div><br>
+        <div id="max_min_temp5"></div><br>
+        <div id="weather_conditions5"></div><br>
+        <div id="wind_humid5"></div>
+        <br><br>
+      </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
   </div>
-  <br><br><br><br>
-  <div>
-    <h1 id="weather"></h1>
-    <div id="day_before_yesterday">
-      <h4 id="day1"></h4><br>
-      <div id="temp_feel1"></div><br>
-      <div id="weather_conditions1"></div><br>
-      <div id="wind_humid1"></div><br>
-    </div>
-    <br><br><br><br>
-    <div id="yesterday">
-      <h4 id="day2"></h4><br>
-      <div id="temp_feel2"></div><br>
-      <div id="weather_conditions2"></div><br>
-      <div id="wind_humid2"></div>
-    </div>
-    <br><br><br><br>
-    <div id="today">
-      <h4 id="day3"></h4><br>
-      <div id="temp_feel3"></div><br>
-      <div id="max_min_temp3"></div><br>
-      <div id="weather_conditions3"></div><br>
-      <div id="wind_humid3"></div>
-    </div>
-    <br><br><br><br>
-    <div id="tomorrow">
-      <h4 id="day4"></h4><br>
-      <div id="temp_feel4"></div><br>
-      <div id="max_min_temp4"></div><br>
-      <div id="weather_conditions4"></div><br>
-      <div id="wind_humid4"></div>
-    </div>
-    <br><br><br><br>
-    <div id="day_after_tomorrow">
-      <h4 id="day5"></h4><br>
-      <div id="temp_feel5"></div><br>
-      <div id="max_min_temp5"></div><br>
-      <div id="weather_conditions5"></div><br>
-      <div id="wind_humid5"></div>
-    </div>
-  </div>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <script type="text/javascript" src="index.js" charset="utf-8"></script>
 </body>
 </html>
