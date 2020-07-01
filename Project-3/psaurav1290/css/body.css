@@ -10,6 +10,7 @@ body {}
     left: 0;
     height: 100vh;
     width: 100vw;
+    background-image: url(../img/weather-wall/50d.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -75,6 +76,7 @@ body {}
 
 .display-info {
     display: flex;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0));
 }
 
 @media (max-width:576px) {
@@ -101,10 +103,19 @@ body {}
     -ms-flex: 1;
     text-align: center;
     margin: 5px;
-    border-radius: 5px;
-    /* border: medium solid rgba(255, 255, 255, 0.651); */
-    box-shadow: 2px 2px 2px 0px rgba(255, 255, 255, 0.2) inset;
+    border-radius: 5px 0 5px 0;
     color: rgba(255, 255, 255, 0.9);
+}
+
+.weather-cell,
+.description-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cell-cap {
+    font-size: 0.5rem;
 }
 
 .cell-val,
@@ -112,12 +123,44 @@ body {}
     display: inline-block;
 }
 
+@media (min-width:577px) {
+    .infoblock-temperature-cell {
+        margin-left: 0;
+        margin-right: 0;
+        border-left: solid 1px rgba(255, 255, 255, 0.6);
+        border-right: solid 1px rgba(255, 255, 255, 0.6);
+    }
+}
+
+@media (max-width:576px) {
+    .infoblock-temperature-cell {
+        margin-top: 0;
+        margin-bottom: 0;
+        border-top: solid 1px rgba(255, 255, 255, 0.6);
+        border-bottom: solid 1px rgba(255, 255, 255, 0.6);
+    }
+}
+
+.temperature-cell-unit {
+    font-size: 1.5rem;
+}
+
+.humidity-cell-unit,
+.wind-cell-unit {
+    font-size: 0.8rem;
+}
+
+.weather-cell {
+    font-size: 1.5rem;
+}
+
 .description-cell {
-    font-style: italic;
+    font-size: 0.9rem;
 }
 
 .temperature-cell {
-    font-size: 80px;
+    font-size: 4rem;
+    text-shadow: 3px 5px 4px rgba(0, 0, 0, 0.5);
 }
 
 .colflex {
@@ -128,19 +171,20 @@ body {}
 
 .batch-cells {
     background-color: var(--background);
-    border-radius: 30px;
+    border-radius: 15px 5px 15px 5px;
     margin: 30px 0;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.548);
     color: #9ff4ff;
 }
 
 .batch-cells-cap {
     text-align: center;
     border-radius: 30px;
-    background-color: rgba(0, 42, 104, 0.849);
+    background-color: rgba(0, 0, 0, 0.486);
     margin-top: 5px;
     height: 50px;
     line-height: 50px;
-    box-shadow: 4px 5px 5px 0px rgba(255, 255, 255, 0.479) inset;
+    box-shadow: 4px 5px 5px 0px rgba(0, 0, 0, 0.856) inset;
 }
 
 
@@ -148,6 +192,43 @@ body {}
     -ms-flex: 1;
     flex: 1;
     cursor: pointer;
+    border-radius: 5px;
+    margin: 5px 5px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+.batch-cell:hover {
+    background-image: linear-gradient(to bottom, rgba(0, 48, 121, 0.5), rgba(0, 102, 255, 0.5), rgba(0, 0, 0, 0));
+
+}
+
+@media (max-width:1200px) {
+    .batch-cell {
+        margin: 5px 4px;
+    }
+}
+
+@media (max-width:992px) {
+    .batch-cell {
+        margin: 5px 3px;
+    }
+}
+
+@media (max-width:768px) {
+    .batch-cell {
+        margin: 5px 2px;
+    }
+}
+
+@media (max-width:576px) {
+    .batch-cell {
+        margin: 5px 1px;
+    }
+}
+
+.batch-cell-selected {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 86, 216, 0.5), rgba(0, 0, 0, 0));
+
 }
 
 .week-day {

@@ -92,20 +92,26 @@ reflectInformationCard = (card, day) => {
 	}
 	card.querySelector(".display-image").style.backgroundImage = `url(img/weather-wall/${info[day].icon}.png)`
 	card.querySelector(".display-image-date").textContent = "(" + info[day].time.toString().split(" GMT")[0].replace(" ", ") ", 1)
-	card.querySelector(".display-image-place").textContent = info.place
+	let placeWords = info.place.trim().split(/[^\d\w,]+/);
+	placeWords.forEach(x => x[0].toUpperCase())
+	placeWords = placeWords.join(" ")
+	card.querySelector(".display-image-place").textContent = placeWords
+}
+reflectBatchContainer = (container, day, index) => {
+	container.querySelectorAll(".week-day")[index].textContent = info[day].time.toString().split(" ")[0]
+	container.querySelectorAll(".week-image")[index].style.backgroundImage = `url(img/weather-icon/${info[day].icon}@4x.png)`
 }
 
 batchCell.forEach(cell => cell.addEventListener("click", (self) => {
 	card = self.target.parentElement.parentElement.parentElement.querySelector(".batch-card")
 	reflectInformationCard(card, self.target.parentElement.dataset.index)
+	batchCellSelected = self.target.parentElement.parentElement.querySelector(".batch-cell-selected")
+	if (batchCellSelected)
+		batchCellSelected.classList.toggle("batch-cell-selected")
+	self.target.parentElement.classList.toggle("batch-cell-selected")
 	card.style.display = "block"
 	setupAnimation()
 }, true))
-
-reflectBatchContainer = (container, day, index) => {
-	container.querySelectorAll(".week-day")[index].textContent = info[day].time.toString().split(" ")[0]
-	container.querySelectorAll(".week-image")[index].style.backgroundImage = `url(img/weather-icon/${info[day].icon}@4x.png)`
-}
 
 setCurrentCoordinates = (location) => {
 	currentCoordinates["lat"] = location.coords.latitude

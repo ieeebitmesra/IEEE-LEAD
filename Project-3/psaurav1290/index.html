@@ -37,8 +37,13 @@
                     </div>
                     <div class="display-info">
                         <div class="infoblock infoblock-weather">
-                            <div class="weather-cell cell">Cloudy</div>
-                            <div class="description-cell cell">Partially Cloudy</div>
+                            <div class="infoblock-weather-cell cell">
+                                <div class="weather-cell cell-val">Cloudy</div>
+                            </div>
+                            <div class="infoblock-description-cell cell">
+                                <div class="description-cell-cap cell-cap">Description</div>
+                                <div class="description-cell cell-val">Partially Cloudy</div>
+                            </div>
                         </div>
                         <div class="infoblock infoblock-temperature">
                             <div class="infoblock-temperature-cell cell">
@@ -55,7 +60,7 @@
                             <div class="infoblock-wind-cell cell">
                                 <div class="wind-cell-cap cell-cap">Wind Speed</div>
                                 <div class="wind-cell cell-val">2.1</div>
-                                <div class="wind-cell-unit cell-unit">kmph</div>
+                                <div class="wind-cell-unit cell-unit">mps</div>
                             </div>
                         </div>
                     </div>
@@ -92,7 +97,7 @@
 
                 <!-- The expanding image container -->
                 <div class="batch-card forecast-card col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-12 col-sm-12">
-                    <span class="close-icon" onclick="this.parentElement.style.display='none';setupAnimation()" class="closebtn">&times;</span>
+                    <span class="close-icon" onclick="this.parentElement.style.display='none';setupAnimation();this.parentElement.parentElement.querySelector('.batch-cell-selected').classList.toggle('batch-cell-selected')" class="closebtn">&times;</span>
                     <div class="display-card">
                         <div class="display-image">
                             <div class="display-image-date"></div>
@@ -100,8 +105,13 @@
                         </div>
                         <div class="display-info">
                             <div class="infoblock infoblock-weather">
-                                <div class="weather-cell cell">Cloudy</div>
-                                <div class="description-cell cell">Partially Cloudy</div>
+                                <div class="infoblock-weather-cell cell">
+                                    <div class="weather-cell cell-val">Cloudy</div>
+                                </div>
+                                <div class="infoblock-description-cell cell">
+                                    <div class="description-cell-cap cell-cap">Description</div>
+                                    <div class="description-cell cell-val">Partially Cloudy</div>
+                                </div>
                             </div>
                             <div class="infoblock infoblock-temperature">
                                 <div class="infoblock-temperature-cell cell">
@@ -153,7 +163,7 @@
 
                 <!-- The expanding image container -->
                 <div class="batch-card past-card col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-12 col-sm-12">
-                    <span class="close-icon" onclick="this.parentElement.style.display='none';setupAnimation()" class="closebtn">&times;</span>
+                    <span class="close-icon" onclick="this.parentElement.style.display='none';setupAnimation();this.parentElement.parentElement.querySelector('.batch-cell-selected').classList.toggle('batch-cell-selected')" class="closebtn">&times;</span>
                     <div class="display-card">
                         <div class="display-image">
                             <div class="display-image-date"></div>
@@ -161,8 +171,13 @@
                         </div>
                         <div class="display-info">
                             <div class="infoblock infoblock-weather">
-                                <div class="weather-cell cell">Cloudy</div>
-                                <div class="description-cell cell">Partially Cloudy</div>
+                                <div class="infoblock-weather-cell cell">
+                                    <div class="weather-cell cell-val">Cloudy</div>
+                                </div>
+                                <div class="infoblock-description-cell cell">
+                                    <div class="description-cell-cap cell-cap">Description</div>
+                                    <div class="description-cell cell-val">Partially Cloudy</div>
+                                </div>
                             </div>
                             <div class="infoblock infoblock-temperature">
                                 <div class="infoblock-temperature-cell cell">
