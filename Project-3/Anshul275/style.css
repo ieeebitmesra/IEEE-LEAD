@@ -1,0 +1,25 @@
+#day_before_yesterday {
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+#yesterday {
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+#today {
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+#tomorrow {
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+#day_after_tomorrow {
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
