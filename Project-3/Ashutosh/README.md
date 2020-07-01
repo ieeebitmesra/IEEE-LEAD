@@ -10,13 +10,20 @@
 
 **MILESTONES ACHIEVED** - 
 
-    1. Longitude, Latitude of the Location
-    2. Current Weather/Today's Weather
-    3. Weather of 5 previous days and forecast of 7 days.
+    1. Fetching latitude and longitude of a given location through API call.
+    2. Fetching weather of given location through API call.
+    3. Fetching location’s weather for a past date and displaying weather of location on website opening. 
     4. OPTIONAL MILESTONES -
-          a. Loader is added while data is loading 
-          b. Cards for displaying the weather
-          c. Different background for different weather
+          a. Clean and Minimalistic design showing everything in less space
+          b. Loader is displayed while data is loading 
+          c. Scrollable Cards for displaying the weather
+          d. Different background for different weather
+          e. Keybindings for Enter key
+          f. Showing weather of current location on opening of the website
+          g. Keybindings for left and right keys for scrolling the cards
+          h. Showing weather of current location on opening of the website
+          i. Reverse Geocoding for getting name of current location
+          j. Shows weather of past 5 days and forecast of 7 days in weather is shown in cards
 
           
           
@@ -34,7 +41,7 @@ The project consists of a simple textbox which takes the input location in text 
 
 **UNIQUE**
 
-It is simple card slider layout with a loader and cards have a property of showing different background for different weather condition.It shows date of the place searched,temperature,humidity and wind speed.
+It is simple card slider layout with a loader and cards have a property of showing different background for different weather condition.It shows date of the place searched,temperature,humidity and wind speed. Keybindings are added for keyboard users.It shows current location weather on opening.
 
 
 **PROBLEMS FACED**
@@ -44,7 +51,7 @@ Adjusting date of different places because of time zones.
 
 **SCOPE OF IMPROVEMENT**
 
-Ajusting the layout of the page and making time zones of all country available.
+Making the website responsive and divinding it in modules
 
 
 **WHAT YOU LEARNED**
