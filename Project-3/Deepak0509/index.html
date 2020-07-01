@@ -37,43 +37,127 @@
                 <div class=currentWeatherHeading>
                     <h3>Current Weather</h3>
                 </div>
+                <div class="latlongLocation">-</div>
                 <div class="currentDateLocation">-</div>
                 <div class="currentIconLocation">
                     <img src="icons/unknown.png" alt="-">
                 </div>
                 <div class="currentTempLocation">-<span>°c</span></div>
                 <div class="currentWeatherLocation">-</div>
-                <div class="currentHigh-LowLocation">-</div>
             </div>
             <div class="DayForecast">
-                <h3>3-Day Weather Forecast</h3>
+                <h3>Upcoming 7-Day Weather Forecast</h3>
             </div>
-            <div class="row Day_1">
-                <div class="col-sm-3 dateLocation_1">-</div>
-                <div class="col-sm-2 iconLocation_1">
+            <div class="row Day_1" id="upcomingWeatherForecastrow">
+                <div class="col-sm-3 dateLocation_1" id="dateLocation">-</div>
+                <div class="col-sm-2 iconLocation_1" id="iconLocation">
                     <img src="icons/unknown.png" alt="-">
                 </div>
-                <div class="col-sm-2 tempLocation_1">-<span>°c</span></div>
-                <div class="col-sm-3 weatherLocation_1">-</div>
-                <div class="col-sm-2 high-lowLocation_1">-</div>
+                <div class="col-sm-2 tempLocation_1" id="tempLocation">-<span>°c</span></div>
+                <div class="col-sm-3 weatherLocation_1" id="weatherLocation">-</div>
+                <div class="col-sm-2 high-lowLocation_1" id="high-lowLocation">-</div>
             </div>
-            <div class="row Day_2">
-                <div class="col-sm-3 dateLocation_2">-</div>
-                <div class="col-sm-2 iconLocation_2">
+            <div class="row Day_2" id="upcomingWeatherForecastrow">
+                <div class="col-sm-3 dateLocation_2" id="dateLocation">-</div>
+                <div class="col-sm-2 iconLocation_2" id="iconLocation">
                     <img src="icons/unknown.png" alt="-">
                 </div>
-                <div class="col-sm-2 tempLocation_2">-<span>°c</span></div>
-                <div class="col-sm-3 weatherLocation_2">-</div>
-                <div class="col-sm-2 high-lowLocation_2">-</div>
+                <div class="col-sm-2 tempLocation_2" id="tempLocation">-<span>°c</span></div>
+                <div class="col-sm-3 weatherLocation_2" id="weatherLocation">-</div>
+                <div class="col-sm-2 high-lowLocation_2" id="high-lowLocation">-</div>
             </div>
-            <div class="row Day_3">
-                <div class="col-sm-3 dateLocation_3">-</div>
-                <div class="col-sm-2 iconLocation_3">
+            <div class="row Day_3" id="upcomingWeatherForecastrow">
+                <div class="col-sm-3 dateLocation_3" id="dateLocation">-</div>
+                <div class="col-sm-2 iconLocation_3" id="iconLocation">
                     <img src="icons/unknown.png" alt="-">
                 </div>
-                <div class="col-sm-2 tempLocation_3">-<span>°c</span></div>
-                <div class="col-sm-3 weatherLocation_3">-</div>
-                <div class="col-sm-2 high-lowLocation_3">-</div>
+                <div class="col-sm-2 tempLocation_3" id="tempLocation">-<span>°c</span></div>
+                <div class="col-sm-3 weatherLocation_3" id="weatherLocation">-</div>
+                <div class="col-sm-2 high-lowLocation_3" id="high-lowLocation">-</div>
+            </div>
+            <div class="row Day_4" id="upcomingWeatherForecastrow">
+                <div class="col-sm-3 dateLocation_4" id="dateLocation">-</div>
+                <div class="col-sm-2 iconLocation_4" id="iconLocation">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 tempLocation_4" id="tempLocation">-<span>°c</span></div>
+                <div class="col-sm-3 weatherLocation_4" id="weatherLocation">-</div>
+                <div class="col-sm-2 high-lowLocation_4" id="high-lowLocation">-</div>
+            </div>
+            <div class="row Day_5" id="upcomingWeatherForecastrow">
+                <div class="col-sm-3 dateLocation_5" id="dateLocation">-</div>
+                <div class="col-sm-2 iconLocation_5" id="iconLocation">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 tempLocation_5" id="tempLocation">-<span>°c</span></div>
+                <div class="col-sm-3 weatherLocation_5" id="weatherLocation">-</div>
+                <div class="col-sm-2 high-lowLocation_5" id="high-lowLocation">-</div>
+            </div>
+            <div class="row Day_6" id="upcomingWeatherForecastrow">
+                <div class="col-sm-3 dateLocation_6" id="dateLocation">-</div>
+                <div class="col-sm-2 iconLocation_6" id="iconLocation">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 tempLocation_6" id="tempLocation">-<span>°c</span></div>
+                <div class="col-sm-3 weatherLocation_6" id="weatherLocation">-</div>
+                <div class="col-sm-2 high-lowLocation_6" id="high-lowLocation">-</div>
+            </div>
+            <div class="row Day_7" id="lastrow">
+                <div class="col-sm-3 dateLocation_7" id="dateLocation">-</div>
+                <div class="col-sm-2 iconLocation_7" id="iconLocation">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 tempLocation_7" id="tempLocation">-<span>°c</span></div>
+                <div class="col-sm-3 weatherLocation_7" id="weatherLocation">-</div>
+                <div class="col-sm-2 high-lowLocation_7" id="high-lowLocation">-</div>
+            </div>
+            <div class="PastDayForecast">
+                <h3>Past 5-Day Weather Forecast</h3>
+            </div>
+            <div class="row Day_1" id="pastWeatherForecastrow">
+                <div class="col-sm-3 datePastLocation_1" id="dateLocation">-</div>
+                <div class="col-sm-2 iconPastLocation_1" id="iconLocation">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 tempPastLocation_1" id="tempLocation">-<span>°c</span></div>
+                <div class="col-sm-3 weatherPastLocation_1" id="weatherLocation">-</div>
+                <div class="col-sm-2 humidityPastLocation_1" id="humidityLocation">-</div>
+            </div>
+            <div class="row Day_2" id="pastWeatherForecastrow">
+                <div class="col-sm-3 datePastLocation_2" id="dateLocation">-</div>
+                <div class="col-sm-2 iconPastLocation_2" id="iconLocation">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 tempPastLocation_2" id="tempLocation">-<span>°c</span></div>
+                <div class="col-sm-3 weatherPastLocation_2" id="weatherLocation">-</div>
+                <div class="col-sm-2 humidityPastLocation_2" id="humidityLocation">-</div>
+            </div>
+            <div class="row Day_3" id="pastWeatherForecastrow">
+                <div class="col-sm-3 datePastLocation_3" id="dateLocation">-</div>
+                <div class="col-sm-2 iconPastLocation_3" id="iconLocation">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 tempPastLocation_3" id="tempLocation">-<span>°c</span></div>
+                <div class="col-sm-3 weatherPastLocation_3" id="weatherLocation">-</div>
+                <div class="col-sm-2 humidityPastLocation_3" id="humidityLocation">-</div>
+            </div>
+            <div class="row Day_4" id="pastWeatherForecastrow">
+                <div class="col-sm-3 datePastLocation_4" id="dateLocation">-</div>
+                <div class="col-sm-2 iconPastLocation_4" id="iconLocation">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 tempPastLocation_4" id="tempLocation">-<span>°c</span></div>
+                <div class="col-sm-3 weatherPastLocation_4" id="weatherLocation">-</div>
+                <div class="col-sm-2 humidityPastLocation_4" id="humidityLocation">-</div>
+            </div>
+            <div class="row Day_5" id="lastrow">
+                <div class="col-sm-3 datePastLocation_5" id="dateLocation">-</div>
+                <div class="col-sm-2 iconPastLocation_5" id="iconLocation">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 tempPastLocation_5" id="tempLocation">-<span>°c</span></div>
+                <div class="col-sm-3 weatherPastLocation_5" id="weatherLocation">-</div>
+                <div class="col-sm-2 humidityPastLocation_5" id="humidityLocation">-</div>
             </div>
         </div>
         <div class="col-sm-6">
@@ -84,43 +168,127 @@
                 <div class=currentWeatherHeading>
                     <h3>Current Weather</h3>
                 </div>
-                <div class="currentDate">-</div>
-                <div class="currentIcon">
+                <div class="latlong">-</div>
+                <div class="currentDate" id"date">-</div>
+                <div class="currentIcon" id="icon">
                     <img src="icons/unknown.png" alt="-">
                 </div>
-                <div class="currentTemp">-<span>°c</span></div>
-                <div class="currentWeather">-</div>
-                <div class="currentHigh-Low">-</div>
+                <div class="currentTemp" id="temp">-<span>°c</span></div>
+                <div class="currentWeather" id="temp">-</div>
             </div>
             <div class="DayForecast">
-                <h3>3-Day Weather Forecast</h3>
+                <h3>Upcoming 7-Day Weather Forecast</h3>
             </div>
-            <div class="row Day_1">
-                <div class="col-sm-3 date_1">-</div>
-                <div class="col-sm-2 icon_1">
+            <div class="row Day_1" id="upcomingWeatherForecastrow">
+                <div class="col-sm-3 date_1" id="date">-</div>
+                <div class="col-sm-2 icon_1" id="icon">
                     <img src="icons/unknown.png" alt="-">
                 </div>
-                <div class="col-sm-2 temp_1">-<span>°c</span></div>
-                <div class="col-sm-3 weather_1">-</div>
-                <div class="col-sm-2 high-low_1">-</div>
+                <div class="col-sm-2 temp_1" id="temp">-<span>°c</span></div>
+                <div class="col-sm-3 weather_1" id="weather">-</div>
+                <div class="col-sm-2 high-low_1" id="high-low">-</div>
             </div>
-            <div class="row Day_2">
-                <div class="col-sm-3 date_2">-</div>
-                <div class="col-sm-2 icon_2">
+            <div class="row Day_2" id="upcomingWeatherForecastrow">
+                <div class="col-sm-3 date_2" id="date">-</div>
+                <div class="col-sm-2 icon_2" id="icon">
                     <img src="icons/unknown.png" alt="-">
                 </div>
-                <div class="col-sm-2 temp_2">-<span>°c</span></div>
-                <div class="col-sm-3 weather_2">-</div>
-                <div class="col-sm-2 high-low_2">-</div>
+                <div class="col-sm-2 temp_2" id="temp">-<span>°c</span></div>
+                <div class="col-sm-3 weather_2" id="weather">-</div>
+                <div class="col-sm-2 high-low_2" id="high-low">-</div>
             </div>
-            <div class="row Day_3">
-                <div class="col-sm-3 date_3">-</div>
-                <div class="col-sm-2 icon_3">
+            <div class="row Day_3" id="upcomingWeatherForecastrow">
+                <div class="col-sm-3 date_3" id="date">-</div>
+                <div class="col-sm-2 icon_3" id="icon">
                     <img src="icons/unknown.png" alt="-">
                 </div>
-                <div class="col-sm-2 temp_3">-<span>°c</span></div>
-                <div class="col-sm-3 weather_3">-</div>
-                <div class="col-sm-2 high-low_3">-</div>
+                <div class="col-sm-2 temp_3" id="temp">-<span>°c</span></div>
+                <div class="col-sm-3 weather_3" id="weather">-</div>
+                <div class="col-sm-2 high-low_3" id="high-low">-</div>
+            </div>
+            <div class="row Day_4" id="upcomingWeatherForecastrow">
+                <div class="col-sm-3 date_4" id="date">-</div>
+                <div class="col-sm-2 icon_4" id="icon">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 temp_4" id="temp">-<span>°c</span></div>
+                <div class="col-sm-3 weather_4" id="weather">-</div>
+                <div class="col-sm-2 high-low_4" id="high-low">-</div>
+            </div>
+            <div class="row Day_5" id="upcomingWeatherForecastrow">
+                <div class="col-sm-3 date_5" id="date">-</div>
+                <div class="col-sm-2 icon_5" id="icon">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 temp_5" id="temp">-<span>°c</span></div>
+                <div class="col-sm-3 weather_5" id="weather">-</div>
+                <div class="col-sm-2 high-low_5" id="high-low">-</div>
+            </div>
+            <div class="row Day_6" id="upcomingWeatherForecastrow">
+                <div class="col-sm-3 date_6" id="date">-</div>
+                <div class="col-sm-2 icon_6" id="icon">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 temp_6" id="temp">-<span>°c</span></div>
+                <div class="col-sm-3 weather_6" id="weather">-</div>
+                <div class="col-sm-2 high-low_6" id="high-low">-</div>
+            </div>
+            <div class="row Day_7" id="lastrow">
+                <div class="col-sm-3 date_7" id="date">-</div>
+                <div class="col-sm-2 icon_7" id="icon">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 temp_7" id="temp">-<span>°c</span></div>
+                <div class="col-sm-3 weather_7" id="weather">-</div>
+                <div class="col-sm-2 high-low_7" id="high-low">-</div>
+            </div>
+            <div class="PastDayForecast">
+                <h3>Past 5-Day Weather Forecast</h3>
+            </div>
+            <div class="row Day_1" id="pastWeatherForecastrow">
+                <div class="col-sm-3 datePast_1" id="date">-</div>
+                <div class="col-sm-2 iconPast_1" id="icon">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 tempPast_1" id="temp">-<span>°c</span></div>
+                <div class="col-sm-3 weatherPast_1" id="weather">-</div>
+                <div class="col-sm-2 humidityPast_1" id="humidity">-</div>
+            </div>
+            <div class="row Day_2" id="pastWeatherForecastrow">
+                <div class="col-sm-3 datePast_2" id="date">-</div>
+                <div class="col-sm-2 iconPast_2" id="icon">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 tempPast_2" id="temp">-<span>°c</span></div>
+                <div class="col-sm-3 weatherPast_2" id="weather">-</div>
+                <div class="col-sm-2 humidityPast_2" id="humidity">-</div>
+            </div>
+            <div class="row Day_3" id="pastWeatherForecastrow">
+                <div class="col-sm-3 datePast_3" id="date">-</div>
+                <div class="col-sm-2 iconPast_3" id="icon">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 tempPast_3" id="temp">-<span>°c</span></div>
+                <div class="col-sm-3 weatherPast_3" id="weather">-</div>
+                <div class="col-sm-2 humidityPast_3" id="humidity">-</div>
+            </div>
+            <div class="row Day_4" id="pastWeatherForecastrow">
+                <div class="col-sm-3 datePast_4" id="date">-</div>
+                <div class="col-sm-2 iconPast_4" id="icon">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 tempPast_4" id="temp">-<span>°c</span></div>
+                <div class="col-sm-3 weatherPast_4" id="weather">-</div>
+                <div class="col-sm-2 humidityPast_4" id="humidity">-</div>
+            </div>
+            <div class="row Day_5" id="lastrow">
+                <div class="col-sm-3 datePast_5" id="date">-</div>
+                <div class="col-sm-2 iconPast_5" id="icon">
+                    <img src="icons/unknown.png" alt="-">
+                </div>
+                <div class="col-sm-2 tempPast_5" id="temp">-<span>°c</span></div>
+                <div class="col-sm-3 weatherPast_5" id="weather">-</div>
+                <div class="col-sm-2 humidityPast_5" id="humidity">-</div>
             </div>
         </div>
     </div>
