@@ -1,0 +1,131 @@
+body{
+   
+    background-color: rgb(23, 180, 233) ;
+   overflow-x: hidden;
+   background-image: url("forecast.jpg");
+  
+   background-repeat: no-repeat;
+  
+}
+
+.container{
+    overflow: hidden;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.top{
+    text-decoration: underline;
+    color: black;
+    width: 100%;
+    height: 13%;
+   
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.input{
+    
+    position: relative;
+   
+    left: 20%;
+    
+}
+form{
+    font-size: 40px;
+
+}
+
+input{
+   
+    width: 30%;
+    height: 6%;
+}
+button{
+    
+    height: 5%;
+    width: 10%;
+    font-size: 20px;
+
+}
+#output{
+    font-family: 'Times New Roman', Times, serif;;
+    color : black; 
+    margin-left: 10%;
+    margin-right: 10%;
+    
+}
+#output ul{
+    
+    list-style: none;
+    }
+.fl{
+    font-size: 30px;
+    text-decoration-style: solid;
+}
+.footer{
+    position: relative;
+    left: 40%;
+    top:50%;
+    color: black;
+}
+/* #preloader{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+background-color: white;
+
+background-image: url("loading.gif");
+background-repeat: no-repeat;
+position: fixed;
+background-position: center;
+z-index: 100;
+} */
+.box1{
+    width:20%;
+    float:left;
+    
+   
+}
+.box2{
+    width:20%;
+    float: center;
+    position: absolute;
+    left: 40%;
+}
+.box3{
+    width:20%;
+    float:right;
+}
+@media(max-width: 700px){
+    body{
+        background-image : none;
+       
+    }
+    .input{
+        position: relative;
+        left:1%;
+    }
+    input{
+        width: 60%;
+    }
+    button{
+        width: 20%;
+        font-size: small;
+    }
+    .box1{
+        float: none;
+        width: 100%;
+    }
+    .box2{
+        float: none;
+        position: initial;
+        width:100%;
+    }
+    .box3{
+        float: none;
+        width:100%;
+    }
+
+}
