@@ -49,30 +49,30 @@
 
 .weather-containers {
     width: 300px;
-    height: 290px;
+    height: 320px;
     background-color: rgba(250, 250, 250, 0.6);
     display: block;
     padding: 30px 30px;
 }
 
 .weather-icon {
-    width: 300px;
-    height: 128px;
+    width: 240px;
+    height: 115px;
 }
 
 .weather-icon img {
     display: block;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .temperature-value {
     width: 300px;
-    height: 60px;
+    height: 50px;
 }
 
 .temperature-value p {
     padding: 0;
-    margin: 5px 50px;
+    margin: 2px 50px;
     color: #293251;
     font-size: 3em;
     text-align: center;
@@ -106,6 +106,22 @@
     margin: 0;
     padding: 0;
     color: #293251;
+    text-align: center;
+    font-size: 1em;
+}
+
+.latElement {
+    margin: 0;
+    padding: 0;
+    color: black;
+    text-align: center;
+    font-size: 1em;
+}
+
+.longElement {
+    margin: 0;
+    padding: 0;
+    color: black;
     text-align: center;
     font-size: 1em;
 }
