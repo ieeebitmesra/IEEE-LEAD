@@ -33,6 +33,8 @@ This program on starting shows the weather data for current location. There is a
 
 I have used two buttons to navigate between the weather data of different dates. Which I don't think anyone has done.
 
+There is simple but interesting property of dark mode where gradient changes to a dark theme after 6pm.
+
 **PROBLEMS FACED**
 
 The only problem I faced this time was fetching weather data for other than current date. Which I later figured out was from a different URL. Other than that it was smooth mostly because of dividing the program in suitable functions.
