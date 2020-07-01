@@ -75,3 +75,9 @@ WHAT DID I LEARN FROM THIS PROJECT -
 
 LINK FOR THIS PROJECT - https://swatipriya2805.github.io/weather/
 
+<img src="sample output/Screenshot (135).png" width="750">
+<img src="sample output/Screenshot (139).png" width="750">
+<img src="sample output/Screenshot (168).png" width="750">
+<img src="sample output/Screenshot (171).png" width="750">
+
+
