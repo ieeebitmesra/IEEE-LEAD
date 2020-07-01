@@ -212,3 +212,17 @@ function setHeaderDate(){
     current_date.innerHTML = "<strong>" + set_Day() + "</strong>, " + set_Date(today);
 }
 /*--------------------------------------------------Function to set current date---------------------------------------------------------------*/
+
+/*--------------------------------------------------Background-change--------------------------------------------------------------------------*/
+let currentTime = new Date().getHours();
+if (6 <= currentTime && currentTime < 18) {
+    if (document.body) {
+        document.body.style = "background-image: linear-gradient(to bottom, #ec6ead, #3494e6)";
+    }
+}
+else {
+    if (document.body) {
+        document.body.style = "background-image: linear-gradient(to bottom, #434343, #000000)";
+    }
+}
+/*--------------------------------------------------Background-change--------------------------------------------------------------------------*/

@@ -1,7 +1,7 @@
 body{
     overflow: hidden;
     margin:0;
-    background-image: linear-gradient(to bottom, #f07abb,#2c244d);
+    background-image: linear-gradient(to bottom, #00ffff,#6600cc);
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -145,4 +145,9 @@ button img{
 }
 
 #result{    display: none;  }
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
 /*----------RESULTS------------------*/
