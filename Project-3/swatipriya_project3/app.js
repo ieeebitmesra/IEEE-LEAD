@@ -23,7 +23,7 @@ var button1 = document.querySelector('.submit1');
 
 var longValue;
 var latValue;
-
+//variables for forecast.
 var date1 = document.querySelector('.date1');
 var tempmin1 = document.querySelector('.tempmin1');
 var tempmax1 = document.querySelector('.tempmax1');
