@@ -1,0 +1,189 @@
+#clockdisplay {
+    padding: 0px 5px 0px 5px;
+    border: 2px solid rgb(224, 230, 144);
+    color: rgb(103, 212, 236);
+    margin-left: 1300px;
+    font-size: 30px;
+    background-color: #2e1515;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(pics/background.jpg);
+    background-size: cover;
+    background-position: top center;
+}
+
+.app {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to top, rgba(49, 46, 46, 0.3), rgba(0, 0, 0, 0.6));
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 15px 15px;
+}
+header input {
+    font-style: italic;
+    width: 100%;
+    max-width: 280px;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background-color: rgba(49, 46, 46, 0.3);
+    border-radius: 16px 0px 16px 0px;
+    backface-visibility: hidden;
+    border-bottom: 1px solid #e14fee;
+    color: #2e1515;
+    font-size: 20px;
+    font-weight: 500;  
+    transition: 2s ease-in-out;
+}
+header input:hover {
+    background-color: rgb(142, 98, 187);
+}
+header input:focus {
+    background-color:  rgba(255, 255, 255, 0.6);
+}
+
+
+main {
+    flex : 5 3 100%;
+    padding: 25px 25px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.location .city {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.location .date {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.location .cord {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+
+.current .temp {
+    color: #fff;
+    font-size: 102px;
+    font-weight: 600;
+    margin: 30px 0;
+    text-shadow: 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.current .type {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 5px;
+    text-shadow: 0px 3px rgba(49, 46, 46, 0.3);
+}
+.current .vary {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: oblique;
+}
+
+.current .humi {
+    color: #fff;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: oblique;
+}
+
+.more {
+    display : flex;
+    margin-bottom: 10px;
+    
+} 
+
+a {
+    font-style: italic;
+    color: navajowhite;
+    font-size: 40px;
+}
+
+.previous {
+    background-color: black;
+    border: 1px solid #fff;
+    align-items: left;
+    margin-left: 100px;
+    padding: 0px 5px 0px 5px;
+    color: rgb(255, 255, 255);
+    
+}
+
+.previous1, .previous3, .previous5 {
+    border: 2px solid paleturquoise;
+}
+
+.previous1, .previous2, .previous3, .previous4, .previous5 {
+    padding: 0px 5px 0px 5px;
+}
+
+
+.future {
+    background-color: black;
+    border: 1px solid #fff;
+    align-items: right;
+    margin-left: 700px;
+    padding: 0px 5px 0px 5px;
+    color: rgb(255, 255, 255);
+}
+
+.future1, .future2, .future3, .future4, .future5{
+    
+    padding: 0px 5px 0px 5px;
+}
+
+.future1, .future3, .future5 {
+    border: 2px solid chocolate;
+}
+
+.predate, .predate1, .predate2, .predate3, .predate4, .postdate, .postdate1, .postdate2, .postdate3, .postdate4 {
+    padding: 0px 5px 0px 5px;
+    border: 1px solid rgb(146, 141, 146);
+    font-size: 25px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.pretype, .pretype1, .pretype2, .pretype3, .pretype4, .posttype, .posttype1, .posttype2, .posttype3, .posttype4 {
+    padding: 0px 5px 0px 5px;
+    border: 1px solid rgb(146, 141, 146);
+    font-style: oblique;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.prevary, .prevary1, .prevary2, .prevary3, .prevary4, .postvary, .postvary1, .postvary2, .postvary3, .postvary4 {
+    padding: 0px 5px 0px 5px;
+    border: 1px solid rgb(146, 141, 146);
+    font-style: oblique;
+    font-size: 32px;
+    font-weight: 500;
+}
+
