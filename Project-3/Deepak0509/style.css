@@ -83,6 +83,21 @@ body {
 }
 
 .DayForecast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: grey;
+    background-color: white;
+    margin: auto;
+    width: 80%;
+    min-height: 40px;
+    padding-top: 4px;
+}
+
+.PastDayForecast {
     display: block;
     justify-content: center;
     align-items: center;
@@ -97,21 +112,17 @@ body {
     padding-top: 4px;
 }
 
-h4 {
-    margin-bottom: none;
-}
-
 .currentWeatherInformation {
     display: block;
     margin: auto;
     margin-bottom: 50px;
     background-color: white;
     width: 50%;
-    height: 200px;
+    height: 220px;
     border-radius: 12px;
 }
 
-.Day_1 {
+#upcomingWeatherForecastrow {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,7 +135,7 @@ h4 {
     border-bottom-color: grey;
 }
 
-.Day_2 {
+#pastWeatherForecastrow {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,7 +148,7 @@ h4 {
     border-bottom-color: grey;
 }
 
-.Day_3 {
+#lastrow {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,6 +160,22 @@ h4 {
     border-bottom-style: solid;
     border-bottom-color: transparent;
     margin-bottom: 30px;
+}
+
+.latlong {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.latlongLocation {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.25rem;
 }
 
 .currentDate {
@@ -181,18 +208,10 @@ h4 {
     text-align: center;
     color: black;
     font-size: 16px;
+    padding-bottom: 10px;
 }
 
-.currentHigh-Low {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
-    font-size: 16px;
-}
-
-.date_1 {
+#dateLocation {
     display: block;
     justify-content: center;
     align-items: center;
@@ -200,15 +219,13 @@ h4 {
     font-size: 1rem;
 }
 
-.icon_1 {
+#iconLocation {
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 }
 
-.temp_1 {
+#tempLocation {
     display: block;
     justify-content: center;
     align-items: center;
@@ -217,7 +234,7 @@ h4 {
     font-size: 16px;
 }
 
-.weather_1 {
+#weatherLocation {
     display: block;
     justify-content: center;
     align-items: center;
@@ -226,7 +243,7 @@ h4 {
     font-size: 16px;
 }
 
-.high-low_1 {
+#high-lowLocation {
     display: block;
     justify-content: center;
     align-items: center;
@@ -235,7 +252,16 @@ h4 {
     font-size: 16px;
 }
 
-.date_2 {
+#humidityLocation {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+#date {
     display: block;
     justify-content: center;
     align-items: center;
@@ -243,57 +269,13 @@ h4 {
     font-size: 1rem;
 }
 
-.icon_2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
-}
-
-.temp_2 {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
-    font-size: 16px;
-}
-
-.weather_2 {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
-    font-size: 16px;
-
-}
-
-.high-low_2 {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
-    font-size: 16px;
-}
-
-.date_3 {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.icon_3 {
+#icon {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.temp_3 {
+#temp {
     display: block;
     justify-content: center;
     align-items: center;
@@ -302,7 +284,7 @@ h4 {
     font-size: 16px;
 }
 
-.weather_3 {
+#weather {
     display: block;
     justify-content: center;
     align-items: center;
@@ -311,7 +293,16 @@ h4 {
     font-size: 16px;
 }
 
-.high-low_3 {
+#high-low {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+#humidity {
     display: block;
     justify-content: center;
     align-items: center;
@@ -344,140 +335,6 @@ h4 {
 }
 
 .currentWeatherLocation {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
-    font-size: 16px;
-}
-
-.currentHigh-LowLocation {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
-    font-size: 16px;
-}
-
-.dateLocation_1 {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.iconLocation_1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.tempLocation_1 {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
-    font-size: 16px;
-}
-
-.weatherLocation_1 {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
-    font-size: 16px;
-}
-
-.high-lowLocation_1 {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
-    font-size: 16px;
-}
-
-
-.dateLocation_2 {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.iconLocation_2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.tempLocation_2 {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
-    font-size: 16px;
-}
-
-.weatherLocation_2 {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
-    font-size: 16px;
-}
-
-.high-lowLocation_2 {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
-    font-size: 16px;
-}
-
-
-.dateLocation_3 {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.iconLocation_3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.tempLocation_3 {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
-    font-size: 16px;
-}
-
-.weatherLocation_3 {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
-    font-size: 16px;
-}
-
-.high-lowLocation_3 {
     display: block;
     justify-content: center;
     align-items: center;
