@@ -6,7 +6,7 @@
     font-family: "Nunito", sans-serif;
     height: 100%;
     width: 100%;
-    background-image: url('bases.jpg');
+    background-image: url('firstimage.jpg');
     background-position: center;
     background-size: cover;
     margin: 0px 0px 0px 0px;
@@ -75,7 +75,7 @@ input[type="submit"]:hover {
 }
 
 .col-md-3 {
-    background: rgba(156, 152, 152, 0.6);
+    background: rgba(150, 148, 148, 0.6);
     cursor: pointer;
     color: #000;
     box-shadow: -5px 5px 5px 0 rgba(0, 0, 0, 0.4);
