@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    
+    <div class="input">
+        <input type="text" class="inputValue" placeholder="ENTER A CITY"><br><br>
+        <input type="submit" value="Get Weather Data" class="button">
+        <input type="submit" value="Get 3 Days Weather Data" class="button2">
+        <button onclick="getLocation()" type="submit">Get Location Weather</button>
+        <!-- <input type="submit" value="Get Current Location Weather" class="button3"> -->
+
+    </div>
+    
+    <div class="display" id="output">
+        <!-- <h1 class="name"></h1>
+        <p class="name"></p> -->
+        <p class="latt"> </p>
+        <p class="long"> </p>
+        <p class="desc"> </p>
+        <p class="temp"> </p>
+        <br>
+        <p class="date1"></p>
+        <p class="tmax1"></p>
+        <p class="tmin1"></p>
+        <p class="desc1"></p><br>
+    
+        <p class="date2"></p>
+        <p class="tmax2"></p>
+        <p class="tmin2"></p>
+        <p class="desc2"></p><br>
+    
+        <p class="date3"></p>
+        <p class="tmax3"></p>
+        <p class="tmin3"></p>
+        <p class="desc3"></p><br>
+    </div>
+</div>
+    
+     
+<script src="app.js"></script>
+</body>
+</html>
